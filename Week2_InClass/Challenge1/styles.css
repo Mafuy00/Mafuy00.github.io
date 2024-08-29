@@ -2,6 +2,12 @@
 body {
     margin: 0;
     padding: 20px;
+    font-family: fantasy;
+    background-color: cornflowerblue;
+    /*background-color: linear-gradient(red,yellow)*/
+    display: flex;
+    justify-content: center;
+    background-image: url('sparkle.jpg');
 }
 
 .container {
@@ -9,38 +15,71 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    position: absolute;
+    border: rgb(177, 0, 0);
+    box-shadow: #333;
 }
 
 /* Header Styles */
 header h1 {
-
+    font-weight: bolder;
+    font-size: 4em;
+    color:rgb(75, 0, 100);
+    text-align: center;
 }
 
 /* Image Styles */
 .celebrity-image {
     width: 100%;
     height: auto;
+    border-radius: 20px;
+    border: 5px solid#333;
 }
 
 /* Text Styles */
 p {
     font-size: 1em;
-    color: #555;
+    color: rgb(75, 0, 100);
     line-height: 1.6;
+    border-style: outset;
+    border-color: rgb(75, 0, 100);
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 2px 2px #333;
 }
 
 /* Button Styles */
 button.learn-more {
-    background-color: #333;
-    border: none;
+    background-color: rgb(75, 0, 100);
+    border: 5px solid black;
+    font-size: larger;
+    border-radius: 5px;
+    color:white;
+    /* padding: 2px 2px 2px 2px; */
+    padding-left: 5px;
+    font-family: cursive;
+    width: 200px;
+    height: 50px;
 }
 
 /* Button Styles when hover over */
 button.learn-more:hover {
-    
+    background-color: rgb(236, 179, 255);
+    color:black;
+    cursor: pointer;
 }
 
 /* Footer Styles */
-footer {
+footer p {
     font-size: 0.8em;
+    background-color: rgb(75, 0, 100);
+    color: white;
+    text-align: center;
+    border-style: ridge;
+    border-color: black;
+    /* position: fixed;
+    border: solid black; */
+    /* min-width: 200px; */
 }
+
