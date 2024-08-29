@@ -1,0 +1,46 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+header h1 {
+
+}
+
+/* Image Styles */
+.celebrity-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Text Styles */
+p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Button Styles */
+button.learn-more {
+    background-color: #333;
+    border: none;
+}
+
+/* Button Styles when hover over */
+button.learn-more:hover {
+    
+}
+
+/* Footer Styles */
+footer {
+    font-size: 0.8em;
+}
