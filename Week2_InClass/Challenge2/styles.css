@@ -7,30 +7,50 @@ body {
 }
 
 h1 {
-    
+    color:#222222;
+    margin: auto;
+    text-align: center;
 }
 
 p {
+    color: #073cfa;
+    font-size: 18px;
+    line-height: 1.6em;
     
 }
 
 /* Class Selectors */
 .highlight {
-    
+    background-color: yellow;
 }
 
 /* ID Selectors */
 #main-header {
-    
+    background-color: #ef52da;
+    color:#ffffff;
+    /* display: flex;
+    justify-content: center; */
+    margin: auto;
+    padding: 30px 20px;
+    /* padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px; */
+    border-radius: 20px;
+    text-align: center;
+    border: 5px solid black;
 }
 
 /* Combining Selectors */
 p.highlight {
-    
+    font-weight: bold;
+    color:red;
 }
 
 /* Combining Selectors */
 h1#sub-header {
+    font-style: italic;
+    text-decoration-line: underline;
     
 }
 
@@ -38,7 +58,9 @@ h1#sub-header {
 .celebrity-image {
     width: 50%;
     border-radius: 10px;
-    border: 5px solid #444444;
+    border: 5px dotted #444444;
+    margin: auto;
+    display: block;
 }
 
 footer {
