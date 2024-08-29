@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self Introduction</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,32 +37,67 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/erGJkZZsTds?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <br>
             <h2>Here is a slideshow of my very cute and lazy dog!</h2>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="dogpic" src="img/dog1.jpg" class="d-block w-100" alt="dog1">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="dogpic" src="img/dog2.jpg" class="d-block w-100" alt="dog2">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="dogpic" src="img/dog3.jpg" class="d-block w-100" alt="dog3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+            <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
+          
+              <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                  <img src="img/dog1.jpg" class="d-block w-100 c-img" alt="Slide 1">
+                  <!-- <div class="carousel-caption top-0 mt-4">
+                    <p class="mt-5 fs-3 text-uppercase">Discover the hidden world</p>
+                    <h1 class="display-1 fw-bolder text-capitalize">The Aurora Tours</h1>
+                    <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Book a tour</button>
+                  </div> -->
+                </div>
+                <div class="carousel-item c-item">
+                  <img src="img/dog2.jpg" class="d-block w-100 c-img" alt="Slide 2">
+                  <!-- <div class="carousel-caption top-0 mt-4">
+                    <p class="text-uppercase fs-3 mt-5">The season has arrived</p>
+                    <p class="display-1 fw-bolder text-capitalize">3 available tours</p>
+                    <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                      data-bs-target="#booking-modal">Book a tour</button>
+                  </div> -->
+                </div>
+                <div class="carousel-item c-item">
+                  <img src="img/dog3.jpg" class="d-block w-100 c-img" alt="Slide 3">
+                  <!-- <div class="carousel-caption top-0 mt-4">
+                    <p class="text-uppercase fs-3 mt-5">Destination activities</p>
+                    <p class="display-1 fw-bolder text-capitalize">Go glacier hiking</p>
+                    <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                      data-bs-target="#booking-modal">Book a tour</button>
+                  </div> -->
+                </div>
+                <div class="carousel-item c-item">
+                  <img src="img/dog4.jpg" class="d-block w-100 c-img" alt="Slide 4">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!-- HTML !-->
+          <br>
+          <form action="https://www.instagram.com/quirkyquiddy" method="get" target="_blank">
+            <button class="button-64" role="button"><span class="text">Check out his instagram page here</span></button>
+          </form>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Yun Lin. All rights reserved.</p>
     </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
