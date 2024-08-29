@@ -29,28 +29,34 @@ footer {
 /* YOUR CODE GOES BELOW */
 
 .fixed-element {
-
+    position: fixed;
     background-color: #8df80b;
     color: #9a0ab0;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px #00000080;
+    right: 20px;
+    bottom: 20px;
 }
 
 .relative-element {
-
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
     border: 2px solid #444444;
+    left: 10px;
+    top: 10px;
 }
 
 .badge {
-    
+    position: absolute;
     background-color: #ffdd00;
     padding: 10px 20px;
     border-radius: 50%;
     font-weight: bold;
+    right: 20px;
+    top: 20px;
 }
