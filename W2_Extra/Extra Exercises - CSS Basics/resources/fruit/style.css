@@ -1,0 +1,61 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+
+.nav-bar{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.nav-bar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .nav-bar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+
+h1, h2 {
+    font-size: larger;
+    color:goldenrod;
+    font-family:arial;
+    font-weight: bold;
+}
+
+.aaf{
+    border: 2px solid yellowgreen;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.bof{
+    position: relative;
+    border: 2px solid darkmagenta;
+    padding: 20px;
+    
+}
+
+.bof img{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
