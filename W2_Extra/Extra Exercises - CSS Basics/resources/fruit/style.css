@@ -47,15 +47,21 @@ h1, h2 {
     padding: 20px;
 }
 
-.bof{
+.apple{
     position: relative;
     border: 2px solid darkmagenta;
     padding: 20px;
-    
+    display: inline-block;
 }
 
-.bof img{
-    position: absolute;
+.apple>img{
+    float: right;
+    margin-left: 20px;
+    /* position: absolute;
     right: 20px;
-    top: 5px;
+    top: 5px; */
+}
+
+ol{
+    background-color: rgb(225, 255, 225);
 }
