@@ -3,7 +3,60 @@
 
     <head>
         <style>
-            
+            .fruit{
+                color:red;
+            }
+
+            .vegetable{
+                color: green;
+            }
+
+            .drinks{
+                color:brown;
+            }
+
+            p{
+                color:blue;
+                font-weight:bolder;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            th {
+                background-color: rgb(170, 119, 119);
+            }
+
+            tr:nth-child(odd) {
+                background-color: lightblue;
+            }
+
+
+            /* .vegPic{
+                position: relative;
+                padding: 20px;
+                display: inline-block;
+            }
+
+            .tableAlign{
+                float: left;
+            } */
+
+            .column {
+                float: left;
+                width: 22%;
+                padding: 5px;
+            }
+
+            /* Clear floats after image containers */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
        
         </style>
     </head>
@@ -14,14 +67,14 @@
         <img style="height:100;width:300" src="images/marketplace.jpg">
         <h1> Welcome to my Marketplace </h1>
 
-        <h2> Fruit Section </h2>
+        <h2 class="fruit"> Fruit Section </h2>
         <p> The list of fruit available are as below :</p>
-	    <div >
-            <div >
+	    <div class="row">
+            <div class="column">
                 <img style="height:200px;width:200px" src="images/fruit.jpeg">
             </div>
             
-            <div >
+            <div class="column">
                 <table style:border=1>
                     <tr> 
                         <th> Name </th>
@@ -53,12 +106,12 @@
             </div>
         </div>
 
-        <h2> Vegetable Section</h2>
+        <h2 class="vegetable"> Vegetable Section</h2>
 
         <p> The list of vegetable available are as below :</p>
         
-        <div>
-            <div>
+        <div class="row">
+            <div class="column">
                 <table style:border=1>
                     <tr> 
                         <th> Name </th>
@@ -82,20 +135,20 @@
                     </tr>
                 </table>
             </div>
-            <div>
+            <div class="column">
                 <img style="height:200px;width:200px" src="images/veg.jpg">
             </div>
             
         </div>
     
-        <h2> Drinks Section</h2>
+        <h2 class="drinks"> Drinks Section</h2>
         <p> The list of drinks available are as below :</p>
-        <div>
+        <div class="row">
 
-            <div>
+            <div class="column">
                 <img style="height:100px;width:100px" src="images/coffee.jpg">
             </div>
-            <div>
+            <div class="column">
                 <table style:border=1>
                     <tr> 
                         <th> Name </th>
