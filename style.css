@@ -170,6 +170,12 @@ h2 {
     }
   }
 
+.spotify{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  max-width: 30%;
+}
 
 footer {
     text-align: center;
