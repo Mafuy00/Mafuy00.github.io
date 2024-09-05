@@ -13,39 +13,105 @@
     border: 1px solid black;
     /* display: inline-block;
     text-wrap: wrap; */
-    justify-content: center;
     display: inline-block;
-    margin: 50px;
+    justify-content: center;
+    /* align-items: center;
+    left: 50%; */
+    /* min-height: 100vh; */
+    /* margin: 100px; */
+}
+
+.center-floor{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* min-height: 100vh; */
+    margin-top: 30px;
 }
 
 
 /* YOU MAY MODIFY THIS */
-.dining-table {
+/* .dining-table {
     background-color: pink;
-    width: 80px;
+    width: 100px;
     height: 100px;
     display: inline-block;
-    /* padding-bottom: 30px; */
-    margin-bottom: 10px;
-    /* margin-right: 5px; */
+    margin-bottom: 50px;
+    margin-top: 20px;
+} */
+
+.dining-table1{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.dining-table2{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 50px;
+    /* margin-left: 20px; */
+}
+
+.dining-table3{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    /* margin-right: 50px; */
+    /* margin-left: 20px; */
+}
+
+.dining-table4{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 
 /* YOU MAY MODIFY THIS */
 .row {
-
+    justify-content: center;
+    display: flex;
 }
 
 
 /* YOU MAY MODIFY THIS */
 .buffet-corner {
-
+    background-color: green;
+    margin-right: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 255px;
+    height: 100px;
+    
 }
 
 
 /* YOU MAY MODIFY THIS */
 .cashier-table {
-
+    background-color: gray;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 
