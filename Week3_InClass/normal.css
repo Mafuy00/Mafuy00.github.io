@@ -7,10 +7,15 @@
 
 #box1{
     background-color: red;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 #box2{
     background-color: yellow;
+    /*margin-collapsing: whoever is bigger will be the margin*/
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 #box3{
@@ -18,5 +23,21 @@
 }
 
 .parent{
-    display:flex;
+    /* display:flex; */
+}
+
+/*
+    On screen that are 600 pixels or less (small tablet),
+    We will make the child boxes stack on top of each other
+    (instead of next to each other).
+*/
+
+@media screen and (max-width: 600px) {
+    .parent{
+        display: block;
+    }
+
+    .child{
+        opacity: 0.5;
+    }
 }
