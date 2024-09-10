@@ -8,6 +8,22 @@
 	<script>
 		var str = prompt("If you provide a string, I will tell you if it is a Palindrome!"); 
        // TODO: add your code here
+		var strToLower = str.toLowerCase();
+		// var arr = [];
+
+		// reversing string
+		var reverse = strToLower.split("").reverse().join("");
+		if (reverse == strToLower){
+			console.log("It is a palindrome")
+		} else {
+			console.log("It is not a palindrome")
+		}
+
+		// for (var i=0;i< strToLower.length;i++){
+		// 	arr += strToLower.split("").;
+		// }
+
+		console.log(arr);
 
 	</script>
 </body>

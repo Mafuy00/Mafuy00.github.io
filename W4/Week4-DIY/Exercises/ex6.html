@@ -18,6 +18,43 @@
         apply(Number, ["string", 5, this, NaN]) //result: [NaN, 5, NaN, NaN]
         */
 
+        // function apply(f, arr) {
+        //     var toReturn = [];
+            
+        //     for (ele of arr) {
+        //         toReturn.push(f(ele));
+        //     }
+
+        //     return toReturn;
+        // } 
+        
+        // function incr(x) {
+        //     return 2*x;
+        // }
+
+        // var variable1 = apply(incr, [1,2,3]);
+
+        // console.log(variable1);
+        // console.log(apply(Number, ["string", 5, this, NaN]))
+
+        function incr(x) {
+            return 2*x;
+        }
+
+        console.log(apply(incr, [1,2,3]));
+
+        console.log(apply(Number, ["string", 5, this, NaN]))
+        function apply(f, arr) {
+            var toReturn = [];
+            
+            for (ele of arr) {
+                toReturn.push(f(ele));
+            }
+
+            return toReturn;
+        }
+
+
 	</script>
 </body>
 </html>
