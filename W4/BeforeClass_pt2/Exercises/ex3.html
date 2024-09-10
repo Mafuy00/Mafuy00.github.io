@@ -8,19 +8,52 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
-
-      <ul>
-         <li>Notebook</li>
-         <li>Jello</li>
-         <li>Spinach</li>
-         <li>Rice</li>
-         <li>Birthday Cake</li>
-         <li>Candles</li>
+      <input type="text" id="item"> <button id="enter" onclick="enter()">Enter</button>
+      <ul id="ul">
+         <li>Notebook <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
+         <li>Jello <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
+         <li>Spinach <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
+         <li>Rice <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
+         <li>Birthday Cake <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
+         <li>Candles <button id="delete" onclick="deleteBtn(this)">Delete</button></li>
       </ul>
       
       <script>
-      
         // add code here
+
+
+        // Ex 4
+         function deleteBtn(button){
+            // const deleteItem = document.getElementById("delete")
+            const listItem = button.parentElement;
+            // Remove the <li> from the <ul>
+            listItem.remove();
+            
+         }
+
+        // Ex 3
+         function enter(){
+            const item = document.getElementById("item")
+
+            var deleteButton = document.createElement("button")
+            deleteButton.textContent = "Delete";
+            deleteButton.id = "delete";
+            deleteButton.onclick = function() {
+
+               deleteBtn(deleteButton);
+            };
+
+            // createElement takes in the values of ul, li etc. html elements
+            var newItem = document.createElement("li")
+            var node = document.createTextNode(item.value);
+            newItem.appendChild(node);
+            var element = document.getElementById("ul");
+
+            //append the element created above to the div1 element
+            element.appendChild(newItem);
+            element.appendChild(deleteButton);
+         }
+         
 
       </script>
  

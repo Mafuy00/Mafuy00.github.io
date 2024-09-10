@@ -10,6 +10,12 @@
         }
 
         /* add CSS code here */
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+            border-radius: 200px;
+        }
 
     </style>
 
@@ -26,7 +32,16 @@
     <script>
         
        // add code here
-
+       function changeShape(){
+        
+        const div = document.getElementById("div1");
+        if (div.style.borderRadius == "200px") {
+            div.style.borderRadius = "0px"
+        } else {
+            document.getElementById("div1").style.borderRadius = "200px";
+        }
+       }
+        
     </script>
 
 </body>

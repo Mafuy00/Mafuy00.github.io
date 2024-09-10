@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List</title>
+</head>
+<body>
+
+    <h1>Shopping List</h1>
+    <p>Get it done today</p>
+
+    <!-- Input and button to add new items -->
+    <input type="text" id="item" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    
+    <!-- Unordered list to hold items -->
+    <ul id="ul">
+        <!-- Existing list items with delete buttons -->
+        <li>Notebook <button onclick="deleteItem(this)">Delete</button></li>
+        <li>Jello <button onclick="deleteItem(this)">Delete</button></li>
+        <li>Spinach <button onclick="deleteItem(this)">Delete</button></li>
+        <li>Rice <button onclick="deleteItem(this)">Delete</button></li>
+        <li>Birthday Cake <button onclick="deleteItem(this)">Delete</button></li>
+        <li>Candles <button onclick="deleteItem(this)">Delete</button></li>
+    </ul>
+
+    <script>
+        // Function to add a new item to the list
+        function addItem() {
+            const itemInput = document.getElementById("item");
+            const itemText = itemInput.value.trim();
+
+            if (itemText === "") {
+                alert("Please enter an item.");
+                return;
+            }
+
+            // Create new list item
+            const li = document.createElement("li");
+            li.textContent = itemText;
+
+            // Create and add delete button to the new list item
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function() {
+                deleteItem(deleteButton);
+            };
+            li.appendChild(deleteButton);
+
+            // Append the new list item to the unordered list
+            const ul = document.getElementById("ul");
+            ul.appendChild(li);
+
+            // Clear the input field
+            itemInput.value = "";
+        }
+
+        // Function to delete a list item
+        function deleteItem(button) {
+            // Get the parent <li> of the button
+            const listItem = button.parentElement;
+            // Remove the <li> from the <ul>
+            listItem.remove();
+        }
+    </script>
+
+</body>
+</html>
