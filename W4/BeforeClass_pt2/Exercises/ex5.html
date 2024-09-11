@@ -15,6 +15,14 @@
         }
 
         /* Add CSS code here */ 
+        #square {
+            width: 200px;
+            height: 200px;
+            border-radius: 0%;
+            background-color: goldenrod;
+            text-align: center;
+            padding-top: 60px;
+        }
 
     </style>
 </head>
@@ -26,6 +34,16 @@
         
         <script>
            // add code here
+            function mOver(obj){
+                var nodes = document.getElementsByTagName("div");
+                nodes[0].getAttributeNode("id").value = "square";
+            }
+
+            function mOut(obj){
+                var nodes = document.getElementsByTagName("div");
+                nodes[0].getAttributeNode("id").value = "circle";
+            }
+
         </script>
                 
 </body>

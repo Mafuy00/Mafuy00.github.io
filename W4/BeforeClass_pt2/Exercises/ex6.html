@@ -19,7 +19,42 @@
     <script>
         
         // add code here
-    
+        var selectedItem = document.getElementById("select_item");
+        
+        selectedItem.addEventListener("click", selectItem);
+
+        function selectItem(){
+
+            // console.log(selectedItem.value);
+        
+            // var ul = document.getElementById("shopList");
+            // var li = document.createElement("li");
+            // var textNode = document.createTextNode(selectedItem.value);
+            // li.appendChild(textNode);
+            // ul.appendChild(li);  
+
+
+            //Get the value of the selected item
+            var itemInput = selectedItem.value;
+            console.log(itemInput);
+
+            // Get the ul id
+            var ul = document.getElementById("shopList");
+
+            // Create new list item
+            var li = document.createElement("li");
+            // li.textContent = itemInput;
+
+            // Create text node to append
+            var textNode = document.createTextNode(itemInput);
+
+            // Add textnode to the list item
+            li.appendChild(textNode);
+            // Append the new list item to the unordered list
+            ul.appendChild(li);
+
+        }
+
     </script>
 
     
