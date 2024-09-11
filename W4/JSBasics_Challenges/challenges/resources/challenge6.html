@@ -10,7 +10,8 @@
         /*
             Write a JavaScript code that performs the following:
             1. When this webpage loads in web browser:
-                - Prompt the user to select an integer between 1 and 10 (both inclusive).
+                - Prompt the user to select an integer between 1 and 10 
+                (both inclusive).
             2. Receive the user input and save into a variable.
             3. Verify that it is a valid integer between 1 and 10.
             4. If it is not a valid input:
@@ -29,6 +30,21 @@
         */
 
         // WRITE YOUR CODE HERE
+        var inputInt = Number(prompt("Select an integer between 1 and 10 (both inclusive)")) 
+        var lucky_number = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+        console.log(lucky_number);
+        
+        if (inputInt > 10 || inputInt < 1 || Number.isInteger(inputInt) == false ) {
+            alert("Hello Hello Invalid Input!")
+        } else {
+            if (inputInt == lucky_number) {
+            alert("Lucky number is " + lucky_number + "! Have a nice day!")
+            console.log(lucky_number);
+        } else {
+            alert("Lucky number is " + lucky_number + "! Ouch... try again next time!")
+            lucky_number = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+        }
+        }
 
     </script>
 
