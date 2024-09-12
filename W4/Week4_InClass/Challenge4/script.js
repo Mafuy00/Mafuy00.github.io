@@ -14,12 +14,14 @@ function generate_board() {
 
 
     // YOUR CODE GOES HERE
-    var nameOfCard = document.getElementsByTagName("option");
+    var nameOfCard = document.getElementById("friends");
 
     // console.log(nameOfCard);
-    friends.push();
-
-
+    for (let option of nameOfCard.options){
+        if (option.selected) {
+            friends.push(option.value);  // Add the selected value to the array
+        }
+    }
 
     // Display user's selection in Developer Tools --> Console.
     console.log(friends);
