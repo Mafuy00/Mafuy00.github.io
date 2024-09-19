@@ -56,8 +56,14 @@ function generate_board() {
     const fruits = [ 'apple', 'banana', 'kiwi', 'orange' ];
 
     // YOUR CODE GOES HERE
+    let gameBoard = document.getElementById("gameboard");
+    // for (let i = 0; i < friends.length; i++){
+    //    gameBoard.innerHTML = `<td><img src='cards/${friends[i]}'</td>`;
+    // }
 
+    gameBoard.innerHTML += `<img src='cards/apple_${friends}.png'`;
 
+    console.log(gameBoard.innerHTML);
 
     //============================================================================
     // Task 3

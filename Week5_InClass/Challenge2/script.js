@@ -4,7 +4,7 @@ function get_all() {
 
     console.log("**** [START] get_all() *****");
 
-    let api_endpoint = 'http://localhost/krazydating/api/profile/read.php';
+    let api_endpoint = 'http://localhost/mafuy00.github.io/Week5_InClass/krazydating/api/profile/read.php';
 
     axios.get(api_endpoint).
     then(response => {
