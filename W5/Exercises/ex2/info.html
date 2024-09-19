@@ -29,6 +29,22 @@
         function getData() {
             
             // Add Code Here
+            var query = event.target.value;
+            if(query == '') {
+                document.getElementById("txtHint").innerHTML = "";
+            } else {
+                var url = "getData.php?query=" + query
+                // url = encodeURI(url)
+                axios.post(url)
+                .then(response =>  {
+                    console.log(response.data)
+                    document.getElementById("txtHint").innerHTML = response.data;
+                })
+                .catch(error => {
+                    console.log(error.message)
+                    document.getElementById("txtHint").innerHTML = error.message;
+                }); 
+            }
 
         }
 

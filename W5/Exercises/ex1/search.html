@@ -11,10 +11,45 @@
 </head>
 <body>
     <!-- add code here-->
+    <div class="jumbotron">
+        <p>Type a name in the input field below:</p>
+        <form>
+            Name: <input type="text" id="name">
+        </form>
+        <p>Suggestions: <span id="txtHint"></span></p>
+    </div>
+
 
     <script>
+        var nameElem = document.getElementById("name");
+        nameElem.addEventListener("keyup", showHint);
 
         // add code here
+        function showHint() {
+            /* // getAttribute methods only return the initial value when it's predefined; otherwise null
+            var val = nameElem.getAttribute("value");
+            console.log(val);  // -> always return the same initial value 
+        
+            var val2 = nameElem.getAttributeNode("value"); // if attr value is not defined in HTML, it returns null obj
+            console.log(val2.value); // -> always return the same initial value */
+
+            var query = event.target.value;
+            if(query == '') {
+                document.getElementById("txtHint").innerHTML = "";
+            } else {
+                var url = "getHint.php?query=" + query
+                // url = encodeURI(url)
+                axios.get(url)
+                .then(response =>  {
+                    console.log(response.data)
+                    document.getElementById("txtHint").innerHTML = response.data;
+                })
+                .catch(error => {
+                    console.log(error.message)
+                    document.getElementById("txtHint").innerHTML = error.message;
+                }); 
+            }
+        }
         
     </script>
 
