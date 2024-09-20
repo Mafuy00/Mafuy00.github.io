@@ -13,31 +13,154 @@
 
     <style>
         /* Add your CSS here */
+        .container-fluid{
+            color:white;
+        }
+
+        .input-group, .container{
+            background-color: yellow;
+            
+        }
+
+        h3{
+            text-align: center;
+            padding-top: 10px;
+            /* margin: auto; */
+        }
+
+        .mb-3{
+            width: 48%;
+            padding: 15px;
+            /* padding-top: 5px; */
+        }
+
+        .badge {
+            background-color: green;
+            color: white;
+            padding: 2px 6px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
     </style>
 
 </head>
 
 <body>
+    <div class="p-3 mb-4 border-bottom bg-primary">
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-5">
+                Registration Page
+            </h1>
+            <p class="col-md-12 fs-8">
+                Enter the details to register
+            </p>
+        </div>
+        
+    </div>
 
-    Registration Page
-    Enter the details to register
+    
+    <h3>About You</h3>
+    <div class="container">
+        <div class="input-group justify-content-evenly">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">First Name
+                    <span class="badge">must</span>
+                </label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Last Name
+                    <span class="badge">must</span>
+                </label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last name">
+            </div>
+        </div>
 
-    First Name
-    Last Name
-    User name
-    Email
-    Short Description
-    Choose Timeslot
-    0800 - 1000
-    1000 - 1200
-    1200 - 1400
-    1400 - 1600
-    1600 - 1800
-    Choose Colors
-    Red
-    Green
-    Yellow
-    Submit
+    </div>
+
+    <div class="container mt-3">
+        <div class="input-group">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">User Name
+                    <span class="badge">must</span>
+                </label>
+                <input type="text" class="form-control" style="width:220%" id="exampleFormControlInput1" placeholder="Username">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="input-group">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Email
+                    <span class="badge">must</span>
+                </label>
+                <input type="email" class="form-control" style="width:220%" id="exampleFormControlInput1" placeholder="Email">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="input-group">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Short Description
+                </label>
+                <textarea class="form-control" style="width:220%;height:75%;" id="exampleFormControlInput1" placeholder="Write a short description about yourself ..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <h3>Choose Timeslot</h3>
+    <div class="container mt-3" style="background-color: pink;">
+        <div class="input-group" style="background-color: pink;">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Timeslot
+                </label>
+                <select class="form-select" style="width:220%;">
+                    <option value="0800 - 1000" selected>0800 - 1000
+                    </option>
+                    <option value="1000 - 1200">1000 - 1200</option>
+                    <option value="1200 - 1400">1200 - 1400</option>
+                    <option value="1400 - 1600">1400 - 1600</option>
+                    <option value="1600 - 1800">1600 - 1800</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <h3>Choose Colors</h3>
+    <div class="container mt-3 mb-2" style="background-color: lightblue; border:2px solid red;">
+        <div class="input-group" style="background-color: lightblue;">
+            <div class="mb-2 mt-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault" style="color:red">
+                      Red
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckDefault" style="color:green">
+                      Green
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked" style="color:orange">
+                      Yellow
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3 mb-2" style="background-color:white">
+        <button type="button" class="btn btn-primary">Submit</button>
+
+    </div>
+
+    
 
 
 
