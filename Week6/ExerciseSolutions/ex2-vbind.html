@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vbind</title>
+
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- : is a short-hand notion of v-bind -->
+    <img v-bind:src="myImg" :width="width" :height="height" />
+  </div>
+
+  <script>
+    Vue.createApp({
+        data() {
+          return {
+            width: '200',
+            height: '200',
+            myImg: 'img/me.png'
+          }
+        }
+    }).mount('#app')   
+  </script>
+</body>
+</html>

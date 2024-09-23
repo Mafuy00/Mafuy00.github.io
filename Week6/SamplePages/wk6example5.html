@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vif</title>
+    
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <h1>The following demonstrates v-if and v-else further.</h1>
+  <div id="app">
+    <div v-if="Math.random() > 0.5">
+      Now you see me &#128512;
+    </div>
+    <div v-else>
+      Now you don't &#128546;
+    </div>
+  </div>
+ 
+  <script>
+    Vue.createApp({}).mount('#app')
+  </script>
+</body>
+
+</html>
