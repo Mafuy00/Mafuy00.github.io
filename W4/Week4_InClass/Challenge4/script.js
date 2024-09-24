@@ -56,12 +56,29 @@ function generate_board() {
     const fruits = [ 'apple', 'banana', 'kiwi', 'orange' ];
 
     // YOUR CODE GOES HERE
-    let gameBoard = document.getElementById("gameboard");
-    // for (let i = 0; i < friends.length; i++){
-    //    gameBoard.innerHTML = `<td><img src='cards/${friends[i]}'</td>`;
-    // }
+    let gameBoard = document.getElementById("game-board");
 
-    gameBoard.innerHTML += `<img src='cards/apple_${friends}.png'`;
+    let selectedFriends = [];
+
+    for (let i = 0; i < friends.length; i++){
+        for (let j = 0; j < fruits.length; j++){
+            console.log('cards/' + fruits[j] + "_" + friends[i]+".png");
+            selectedFriends.push('cards/' + fruits[j] + "_" + friends[i]+".png");
+            
+            // console.log(gameBoard.innerHTML);
+        }
+
+    }
+
+    console.log(selectedFriends);
+    console.log(gameBoard)
+
+    // gameBoard.innerHTML = 'cards/apple_' + friends[i]+".png";
+    
+    // let img = document.createElement('img');
+    // img.src = 'cards/apple_brandon.png';
+    // gameBoard.appendChild(img);
+    // gameBoard.innerHTML = `<img src='cards/apple_${friends}.png'`;
 
     console.log(gameBoard.innerHTML);
 
@@ -86,7 +103,7 @@ function generate_board() {
 
 
     // YOUR CODE GOES HERE
-
+    
     // You will need to rewrite the value of this result_str (String).
     let result_str = `
         <div style='color: red'>
