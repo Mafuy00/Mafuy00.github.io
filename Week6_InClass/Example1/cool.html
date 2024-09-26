@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal (without Vue)</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+
+    <div id="main">
+
+        <h1>
+            {{greeting}}
+        </h1>
+
+        <!-- Vue directive v-text-->
+
+        <h2 v-text="fullname"></h2>
+
+        <!-- Vue directive v-html-->
+        <div v-html="pet"></div>
+
+        <h1>Welcome to my fruits page!</h1>
+
+        <p>Fruits I currently have in my basket:</p>
+        <ul id="fruits" >
+            <!-- Vue  will repeat generate <li> for N number of items in fruits data property-->
+            <!-- Vue directive v-for-->
+             <li v-for="fruit of fruits">
+                {{fruit}}
+             </li>
+        </ul>
+        
+        <hr>
+        New fruit to add:
+        <!-- Vue directive
+            v-model 
+        -->
+
+        <input type="text" v-model="add_fruit_name"> 
+        <!-- Vue directive
+            v-on:click 
+        -->
+        <button v-on:click="add_fruit">Add Fruit</button>
+        <h2>User keyed in new fruit: {{add_fruit_name}}</h2>
+    
+        <hr>
+        Fruit to remove:
+        <input type="text" v-model="remove_fruit_name"> 
+        <button v-on:click="remove_fruit">Remove Fruit</button>
+        <h2>User keyed in remove fruit: {{remove_fruit_name}}</h2>
+
+        <hr>
+        New Link:<input type="text" v-model="news_url" size="40">
+        <br>
+        <!-- Vue directive
+            v-bind
+            shorthand
+            :
+
+            v-bind:src
+            :src
+
+            v-bind:href
+            :href
+
+            
+
+        -->
+        <a v-bind:href="news_url" target="_blank"> News Website</a>
+
+    </div>
+
+    
+
+    <script src="cool.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+</body>
+</html>

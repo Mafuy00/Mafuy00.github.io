@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal (without Vue)</title>
+</head>
+<body onload="populate_fruits()">
+
+    <h1>Welcome to my fruits page!</h1>
+
+    <p>Fruits I currently have in my basket:</p>
+    <ul id="fruits" ></ul>
+    
+    <hr>
+    New fruit to add:
+    <input type="text" id="add_fruit_name"> 
+    <button onclick="add_fruit()">Add Fruit</button>
+
+    <hr>
+    Fruit to remove:
+    <input type="text" id="remove_fruit_name"> 
+    <button onclick="remove_fruit()">Remove Fruit</button>
+    
+
+    <script src="normal.js"></script>
+</body>
+</html>

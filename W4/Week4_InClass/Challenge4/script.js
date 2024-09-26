@@ -58,19 +58,19 @@ function generate_board() {
     // YOUR CODE GOES HERE
     let gameBoard = document.getElementById("game-board");
 
-    let selectedFriends = [];
+    let array = [];
 
     for (let i = 0; i < friends.length; i++){
         for (let j = 0; j < fruits.length; j++){
             console.log('cards/' + fruits[j] + "_" + friends[i]+".png");
-            selectedFriends.push('cards/' + fruits[j] + "_" + friends[i]+".png");
+            array.push('cards/' + fruits[j] + "_" + friends[i]+".png");
             
             // console.log(gameBoard.innerHTML);
         }
 
     }
 
-    console.log(selectedFriends);
+    console.log(array);
     console.log(gameBoard)
 
     // gameBoard.innerHTML = 'cards/apple_' + friends[i]+".png";
@@ -103,15 +103,35 @@ function generate_board() {
 
 
     // YOUR CODE GOES HERE
+    var result_str = `
+    <div class='container'>
+    <div class = 'row'>`;
     
     // You will need to rewrite the value of this result_str (String).
-    let result_str = `
-        <div style='color: red'>
-            <p>This is a sample HTML code that will replace the parent div's innerHTML!</p>
-            <p>Instead of paragraph texts, you will display cards here.</p>
-        </div>
-    `;
+    for (let i = 0; i < array.length; i++) {
+        // Start a new row every num_cols items
+        if (i % num_cols === 0 && i !== 0) {
+            result_str += `</div><div class='row'>`;
+        }
 
+        let shuffledArray = shuffleArray(array);
+
+        // Add the card to the column
+        result_str += `
+            <div class='col-3'>
+                <img src='${shuffledArray[i]}' class='card-img'>
+            </div>
+        `;
+    }
+    
+    // for (let i=0; i<array.length;i++){
+    //     result_str += `
+    //     <img src='${array[i]}'>
+    //     `.repeat(2);
+    // console.log(array[i])
+    // }
+
+    result_str += `</div></div>`;
 
     // DO NOT MODIFY THE FOLLOWING
     // Replace the innerHTML of <div id="game-board">

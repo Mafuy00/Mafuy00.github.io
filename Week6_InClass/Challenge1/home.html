@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1 - Pet Like Tracker</title>
+
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- External Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="root">
+
+        <h2>Challenge 1 - Celebrity Like Tracker</h2>
+
+        <p>
+            Create a Vue.js application where users can "like" a celebrity and keep track of the number of likes each celebrity has.
+        </p>
+
+        <hr>
+
+        <table>
+
+            <tr>
+                
+                <!-- MODIFY TO ADD VUE CODE
+                     Instead of hard-coding the table headers (there are 5 of them),
+                     read the header data from the Vue app.
+
+                     What Vue directive should you use inside of <th>?
+                     Read the header data from 'table_headers' data property.
+                -->
+                <th v-for="head of table_headers">
+                    {{head}}
+                </th>
+            </tr>
+            
+            <tr v-for="(celebrity, index) in celebrities" v-bind:key="index">
+
+                <!-- MODIFY TO ADD VUE CODE
+                     How can we retrieve and display the celebrity's name?
+                -->
+                <td>
+                    {{celebrity.name}}
+                </td>
+                
+                <!-- MODIFY TO ADD VUE CODE
+                     How can we retrieve and display the celebrity's photo?
+                -->
+                <td>
+                    <img v-bind:src=celebrity.photo>
+                </td>
+
+                <!-- MODIFY TO ADD VUE CODE
+                     How can we retrieve and display the celebrity's # of likes?
+
+                     NOTE: The CSS styling for "red" (class selector) is
+                           declared in styles.css file.
+                -->
+                <td class="red" v-if="celebrity.likes > 5">
+                    {{celebrity.likes}}
+                </td>
+
+                <td v-else>
+                    {{celebrity.likes}}
+                </td>
+
+                <td>
+                    <!-- MODIFY TO ADD VUE CODE
+                         When the user clicks on this button, Vue method add_like() will be called.
+                         What Vue directive should you use?
+                    -->
+                    <button v-on:click="add_like(index)">Like</button>
+                </td>
+
+                <td>
+                    <!-- MODIFY TO ADD VUE CODE
+                         When the user clicks on this button, Vue method delete_like() will be called.
+                         What Vue directive should you use?
+                    -->
+                    <button v-on:click="delete_like(index)">Dislike</button>
+                </td>
+                
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

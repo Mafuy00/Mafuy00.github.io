@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2 - Pet Age Tracker</title>
+
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- External Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="root">
+
+        <h2>Challenge 2 - Pet Age Tracker</h2>
+
+        <p>
+            Create a pet age tracker where users can enter and display the age of multiple pets using Vue.js.
+        </p>
+
+        <hr>
+
+        Please key in your new pet's details: <br><br>
+
+        <!-- MODIFY TO ADD VUE CODE
+             When the user keys in a new value, it must be reflected in Vue data property 'new_pet_name'.
+             What Vue directive should you use?
+        -->
+        <input type="text" placeholder="Pet Name">
+
+        <!-- MODIFY TO ADD VUE CODE
+             When the user keys in a new value, it must be reflected in Vue data property 'new_pet_age'.
+             What Vue directive should you use?
+        -->
+        <input type="number" placeholder="Pet Age" min="0" onkeypress="return event.charCode >= 48">
+        
+        <!-- MODIFY TO ADD VUE CODE
+             When the user clicks on this button, Vue method add_pet() will be called.
+             What Vue directive should you use?
+        -->
+        <button>Add Pet</button>
+
+
+        <ul>
+            <li v-for="(pet, index) in pets" v-bind:key="index">
+
+                {{ pet.name }} is {{ pet.age }} years old 
+
+                <!-- MODIFY TO ADD VUE CODE
+                     When the user clicks on this button, Vue method increase_age() will be called.
+                     What Vue directive should you use?
+                -->
+                <button>
+                    Increase Age
+                </button>
+
+                <!-- MODIFY TO ADD VUE CODE
+                     This span should be made visible only when this pet is indeed a senior pet.
+                     What Vue directive should you use?
+                -->
+                <span style="font-style: italic; color: blue;">
+                    Senior Pet !!!
+                </span>
+
+            </li>
+        </ul>
+
+    </div>
+
+    
+    <!-- External Custom JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

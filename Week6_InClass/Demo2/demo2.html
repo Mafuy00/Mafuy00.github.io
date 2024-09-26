@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 2</title>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        .red {
+            border: 5px solid red;
+        }
+
+        .green {
+            border: 5px solid green;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="root">
+
+        <h1>
+            Send Love Letter
+        </h1>
+
+        Sentence:<br>
+
+        <input type="text" v-model="sentence">
+
+        <br><br>
+        
+
+        <!--
+            v-bind:disabled
+            or
+            :disabled (shorthand)
+        -->
+        <button 
+            onclick="alert('sending your love!')" 
+            v-bind:disabled=" sentence.length < 15 ">
+
+            Send My Love
+        </button>
+
+        <h1> Sentence Length: {{ sentence.length }} </h1>
+
+        <hr>
+        URL: <input type="text" v-model="url" size="30">
+
+        <br><br>
+        Click <a v-bind:href="url" target="_blank">Here</a>
+
+
+        <hr>
+        <div v-bind:style="{ 'background-color': box_bg_color, 'fontSize':  box_font_size}">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dicta cum nostrum esse adipisci quis eaque pariatur eius ad dolor minus possimus tempora, error perspiciatis consequatur officia aperiam repellendus vel.
+        </div>
+
+
+        <hr><hr>
+        <h1>
+            Send Love Letter Again
+        </h1>
+
+        Sentence Again:<br>
+
+        <!-- <input type="text" 
+            v-model="sentence2"
+            v-bind:class="{ red: sentence2.length < 15 }"> -->
+
+        <input type="text" 
+            v-model="sentence2"
+            v-bind:class="[ sentence2.length < 15 ? 'red' : 'green' ]">
+
+        <br><br>
+        
+        <button 
+            onclick="alert('sending your love!')" 
+            v-bind:disabled=" sentence2.length < 15 ">
+
+            Send My Love
+        </button>
+
+        <h1> Sentence Length: {{ sentence2.length }} </h1>
+
+
+
+        <hr>
+        <h1>
+            My name is {{ name }}
+        </h1>
+        <button v-on:click="hahaha()">
+            Press Me
+        </button>
+        
+        
+        
+        <hr>
+        <button v-on:click="counter += 1">Add 1</button>
+        <h2>The button above has been clicked {{ counter }} times.</h2>
+
+    </div>
+
+
+
+
+    <script src="demo2.js"></script>
+    
+</body>
+</html>

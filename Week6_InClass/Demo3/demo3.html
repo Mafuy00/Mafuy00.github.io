@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 3</title>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        .red {
+            border: 5px solid red;
+        }
+
+        .green {
+            border: 5px solid green;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+
+        <h1>Stray Cats</h1>
+
+        <hr>
+
+        <ul>
+            <li v-for="cat in cats">
+                {{ cat }}
+            </li>
+        </ul>
+
+
+
+        <hr>
+
+        <p v-for="cat in cats">
+            {{ cat }}
+        </p>
+
+
+
+        <hr>
+
+        <p v-for="(cat, index) in cats">
+            {{ (index + 1) }} - {{ cat }}
+        </p>
+
+
+
+        <hr>
+
+        <ol>
+            <li v-for="dog in dogs">
+                {{ dog.name }} is {{ dog.age }} years old
+            </li>
+        </ol>
+
+        
+
+
+        <hr>
+        <table border='1'>
+
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+            </tr>
+
+            <tr v-for=" (value, key) in countries ">
+                <td> {{ key }}  </td>
+                <td> {{ value }}  </td>
+            </tr>
+
+        </table>
+
+
+
+        <hr>
+
+        <ul>
+            <li v-for=" (capital, country, index) in countries ">
+                {{ ++index }} - {{ country }} has capital of {{ capital }}
+            </li>
+        </ul>
+
+
+    </div>
+
+
+
+
+    <script src="demo3.js"></script>
+    
+</body>
+</html>

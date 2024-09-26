@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 1</title>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="root">
+
+        <h1>
+            {{ message }}
+        </h1>
+
+        <h1 v-text="message">
+        </h1>
+
+        <div v-text="name">
+        </div>
+
+        <div v-html="name">
+        </div>
+
+        <h1>
+            {{ say_hello() }}
+        </h1>
+
+        <hr>
+        <!-- v-model works for form elements -->
+        Fullname: <input type="text" v-model="fullname">
+
+        <h1>
+            Fullname: {{ fullname }}
+        </h1>
+
+
+        <hr>
+
+        <h1 v-if=" fullname == 'Justin Bieber' ">
+            Baby Baby
+        </h1>
+        <h1 v-else-if="fullname == 'Selena Gomez' ">
+            We don't talk anymore
+        </h1>
+        <h1 v-else>
+            I don't recognize this person
+        </h1>
+
+
+        <hr>
+
+        <h1 v-if=" fullname.length > 5 ">
+            String length greater than 5
+        </h1>
+        <h1 v-else>
+            Aiyo... type some more
+        </h1>
+
+
+        <hr>
+
+        <h1 v-if=" fullname.toLowerCase() == 'brad pitt' ">
+            Match
+        </h1>
+        <h1 v-else>
+            No Match
+        </h1>
+
+
+        <hr>
+        <h1 v-show="is_handsome">
+            Peekaboo!
+        </h1>
+
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- <div id="nobody">
+
+        <h1>
+            {{ message }}
+        </h1>
+
+    </div> -->
+
+
+
+
+    <script src="demo1.js"></script>
+    
+</body>
+</html>

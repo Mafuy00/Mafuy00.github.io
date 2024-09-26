@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3 - Celebrity and Pet Matchmaker</title>
+
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- External Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="root">
+
+        <h2>Challenge 3 - Celebrity and Pet Matchmaker</h2>
+
+        <p>
+            Create a Vue.js application where users can match celebrities with their favorite pets. Users will randomly generate a pair (celebrity and pet), and the app will display a fun message about their compatibility.
+        </p>
+
+        <hr>
+
+        <!-- MODIFY TO ADD VUE CODE
+             When the user clicks on this button, generate a new match by calling generate_match method.
+             What Vue directive should you use?
+        -->
+        <button>
+            Generate Match
+        </button>
+
+        <!-- MODIFY TO ADD VUE CODE
+             When the user clicks on this button, generate a new match by calling reset_match method.
+             What Vue directive should you use?
+        -->
+        <button>
+            Reset
+        </button>
+
+
+        <!-- MODIFY TO ADD VUE CODE
+             The below <div> is hidden by default.
+             It will be made visible to the user when a new match is made.
+             What Vue directive should you use?
+        -->
+        <div>
+
+            <h2>Match Found!</h2>
+
+            <p>
+
+                <!-- MODIFY TO ADD VUE CODE
+                     After a celebrity selection is made, display his/her name.
+                -->
+                <strong>
+                    Celebrity name goes here
+                </strong> and 
+               
+                <!-- MODIFY TO ADD VUE CODE
+                     After a pet selection is made, display his/her name.
+                -->
+                <strong>
+                    Pet name goes here
+                </strong> 
+                the
+                
+                <!-- MODIFY TO ADD VUE CODE
+                     After a pet selection is made, display his/her type.
+                -->
+                (pet type goes here)
+                
+                make a great pair!
+            </p>
+
+
+            <p>
+                <!-- MODIFY TO ADD VUE CODE
+                     After a match is made, display the fun message.
+                -->
+                Fun message goes here
+            </p>
+
+            
+            <!-- MODIFY TO ADD VUE CODE
+                 After a match is made, display the selected celebrity's photo.
+                 What Vue directive should you use?
+            -->
+            <img src="" alt="Celebrity Photo">
+
+            <!-- MODIFY TO ADD VUE CODE
+                 After a match is made, display the selected pet's photo.
+                 What Vue directive should you use?
+            -->
+            <img src="" alt="Pet Photo">
+
+        </div>
+
+
+        <!-- MODIFY TO ADD VUE CODE
+             Display the text below when no match is made yet.
+             What Vue directive should you use?
+        -->
+        <p>
+            Click "Generate Match" to find the perfect pair!
+        </p>
+        
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
