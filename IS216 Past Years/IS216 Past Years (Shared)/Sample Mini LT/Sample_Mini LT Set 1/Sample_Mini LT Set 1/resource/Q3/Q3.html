@@ -10,6 +10,8 @@
       height: 30px;
       width: 30px;
       float: left;
+      background-color: lightyellow;
+
     }
     .row {
       clear: both;
@@ -36,11 +38,29 @@
     </div>
   </div>
   <script>
-    var currentPlayer = "O";
+    var player = prompt("Who starts first? (X or O)");
+    console.log(player);
+    var currentPlayer = "";
+
+    if (player == "X"){
+      currentPlayer = "X"
+    } else {
+      currentPlayer = "O"
+    }
+
     var won = false;
     function place(box) {
       if(box.innerText != "" || won) return;
       box.innerText = currentPlayer;
+
+      if (currentPlayer == "X") {
+        box.style.color = "blue"; // Make X blue
+        // currentPlayer = "O"; // Switch to O
+      } else {
+        box.style.color = "red"; // Make O red
+        // currentPlayer = "X"; // Switch to X
+      }
+
       currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
       checkGameBoard();   
     }
@@ -62,7 +82,7 @@
     }
     function checkWinner(first, second, third) {
       if(first != "" && first == second && first == third) {
-        alert("Winner!");
+        alert(`Winner is ${first}!`);
         won = true;
       }
     }
