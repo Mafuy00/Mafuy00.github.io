@@ -114,13 +114,18 @@ function generate_board() {
         for(j=0;j<num_cols;j++){
             let card = shuffledArray.pop();
             console.log(card);
-            result_str += `<div class='column'>
-            <img src="${card}"></div>`
+            result_str += `
+            <div class='column'>
+            <img src="${card}">
+            </div>`
             
         }
         
 
         result_str += `</div>`
+
+        
+
     }
 
     // <div class="row">

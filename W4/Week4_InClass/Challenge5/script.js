@@ -1,3 +1,8 @@
+var score = 0;
+var flippedCards = [];  // Array to store the currently flipped cards
+let matchedPairs = 0;  // Number of pairs matched
+let totalPairs = 0;    // Total number of pairs in the game
+
 function generate_board() {
 
     //============================================================================
@@ -105,63 +110,30 @@ function generate_board() {
 
 
     // YOUR CODE GOES HERE
-    var result_str = ``;
+    totalPairs = (num_cols * num_rows) / 2;  // Calculate total number of pairs
 
-    for(i=0;i<num_rows;i++){
+
+
+    var result_str = `
+    <h1 id="score">Total Score: ${score}</h1>
+    `;
+
+    for (i = 0; i < num_rows; i++) {
         result_str += `
-        <div class='row'>`
-        //     <div class='column'>test</div>
-        for(j=0;j<num_cols;j++){
+        <div class='row'>`;
+        for (j = 0; j < num_cols; j++) {
             let card = shuffledArray.pop();
             console.log(card);
-            result_str += `<div class='column'>
-            <img src="${card}"></div>`
-            
+            result_str += `
+            <div class='column' onclick="flipCard(this, '${card}')">
+                <div class="flipper">
+                    <img class="front" src="cards/hidden.png">
+                    <img class="back" src="${card}">
+                </div>
+            </div>`;
         }
-        
-
-        result_str += `</div>`
+        result_str += `</div>`;
     }
-
-    // <div class="row">
-    //     <div class="column">
-    //         photo here
-    //     </div>
-    //     <div class="column">
-    //         photo here
-    //     </div>
-    //     <div class="column">
-    //         photo here
-    //     </div>
-    //     <div class="column">
-    //         photo here
-    //     </div>
-    // </div>
-    
-    // You will need to rewrite the value of this result_str (String).
-    // for (let i = 0; i < array.length; i++) {
-    //     // Start a new row every num_cols items
-    //     if (i % num_cols === 0 && i !== 0) {
-    //         result_str += `</div><div class='row'>`;
-    //     }
-
-    //     let shuffledArray = shuffleArray(array);
-
-    //     result_str += `
-    //         <div class='col-3'>
-    //             <img src='${shuffledArray[i]}' class='card-img'>
-    //         </div>
-    //     `;
-    // }
-    
-    // for (let i=0; i<array.length;i++){
-    //     result_str += `
-    //     <img src='${array[i]}'>
-    //     `.repeat(2);
-    // console.log(array[i])
-    // }
-
-    // result_str += `</div></div>`;
 
     // DO NOT MODIFY THE FOLLOWING
     // Replace the innerHTML of <div id="game-board">
@@ -169,13 +141,48 @@ function generate_board() {
     document.getElementById('game-board').innerHTML = result_str;
 }
 
+// Function to handle card flipping and matching logic
+function flipCard(cardElement, cardValue) {
+    cardElement.classList.toggle('flipped');
+
+    // Add the card to the flippedCards array
+    flippedCards.push({ element: cardElement, value: cardValue });
+
+      // If two cards are flipped, check for a match
+      if (flippedCards.length === 2) {
+        if (flippedCards[0].value === flippedCards[1].value) {
+            // Cards match, increment the score and matched pairs
+            score++;
+            matchedPairs++;
+            document.getElementById('score').innerText = `Total Score: ${score}`;
+
+            // Check if all pairs have been matched
+            if (matchedPairs === totalPairs) {
+                // Display the congratulations message
+                document.getElementById('score').innerHTML = `<h2>All Matched, Congratulations!</h2>`;
+            }
+
+            // Clear the flipped cards array for the next round
+            flippedCards = [];
+        } else {
+            // Cards don't match, flip them back after a short delay
+            setTimeout(() => {
+                flippedCards[0].element.classList.remove('flipped');
+                flippedCards[1].element.classList.remove('flipped');
+                flippedCards = [];
+            }, 1000);  // Delay to show the mismatched cards
+        }
+    }
+    
+}
+console.log(flippedCards);
 
 // Utility Function
 // DO NOT MODIFY
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];  // Swap elements
     }
     return array;
 }
