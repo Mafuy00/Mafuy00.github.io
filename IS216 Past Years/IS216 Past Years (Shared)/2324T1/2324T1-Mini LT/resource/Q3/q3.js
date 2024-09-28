@@ -9,10 +9,32 @@ var recipes = [
     {name: "Split Pea Soup", ingredients: ["1 pound split peas", "1 onion", "6 carrots", "4 ounces of ham"]}
 ]
 
+
 function displayRecipe() {
     document.getElementById("recipeName").innerText = recipes[i].name;
 
     // Add Code Below
+    let displayIng = document.getElementById("ingredientList");
+    console.log(displayIng);
+
+    // this works but its innerHTML
+    // for (ingredient of recipes[i].ingredients){
+    //   displayIng.innerHTML += `<li> ${ingredient} </li`;  
+    // }
+
+    // using createElement method
+    let ingredients = recipes[i].ingredients;
+
+    for (let i=0;i<fruits.length;i++){
+      var newItem = document.createElement("li")
+      var node = document.createTextNode(fruits[i])
+      newItem.appendChild(node);
+      ul.appendChild(newItem);
+      console.log(fruits[i])
+  }
+
+
+   return;
 
 }
 
