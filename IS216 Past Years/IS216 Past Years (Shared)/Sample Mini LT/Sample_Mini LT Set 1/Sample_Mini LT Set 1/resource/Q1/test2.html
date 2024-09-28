@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to center things</title>
+ 
+    <style> 
+        h1 { 
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make body full height for vertical centering */
+            margin: 0; /* Remove default margin */
+        }
+
+        .outer-box {
+            width: 600px;
+            height: 600px;
+            border: 3px solid blue;
+            text-align: center;
+            display: flex; /* Use flexbox to align inner boxes */
+            flex-direction: column; /* Arrange inner boxes vertically */
+            justify-content: center; /* Center inner boxes vertically */
+            align-items: center; /* Center inner boxes horizontally */
+        }
+
+        #box1, #box2, #box3 {
+            border: 2px solid red;
+            background-color: yellow;
+            width: 400px;
+            height: 100px;
+            margin: 10px 0; /* Margin on top and bottom */
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- <h1>Heading 1</h1> -->
+    <div class="outer-box">
+        <div id="box1">
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium eligendi placeat quisquam recusandae accusantium sint in molestiae, dolores dignissimos hic quis debitis nobis officiis vero sunt.
+                Voluptatum dolorem iste nam.
+            </div>
+        </div>
+        <div id="box2">
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium eligendi placeat quisquam recusandae accusantium sint in molestiae, dolores dignissimos hic quis debitis nobis officiis vero sunt.
+                Voluptatum dolorem iste nam.
+            </div>
+        </div>
+        <div id="box3">
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium eligendi placeat quisquam recusandae accusantium sint in molestiae, dolores dignissimos hic quis debitis nobis officiis vero sunt.
+                Voluptatum dolorem iste nam.
+            </div>
+        </div>
+    </div>
+</body> 
+</html>
