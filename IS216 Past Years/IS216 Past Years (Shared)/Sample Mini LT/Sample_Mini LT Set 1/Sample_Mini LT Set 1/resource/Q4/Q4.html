@@ -77,6 +77,45 @@
     <script>
         //Your code should be entirely here. Do not change anything else. 
 
+        let orderArr = {};
+        // gets the order value from the checkbox
+        function updt(order){
+
+            // for (ele of order){
+            //     console.log(ele);
+            // }
+            
+            var itemPrice = document.getElementById(`${order} Price`).textContent;
+            orderArr[order] = Number(itemPrice);
+            
+            
+            console.log(order);
+            console.log(itemPrice);
+            console.log(orderArr);
+
+            let orderInfo = document.getElementById("orderInfo");
+            orderInfo.innerHTML = `
+            <h1>Your Order.</h1>
+            <ul>
+            `;
+
+            let total = 0;
+
+            for (const [key, value] of Object.entries(orderArr)){
+                orderInfo.innerHTML += `
+                <li> ${key}: ${value} </li> 
+                `
+                total += value;
+            }
+            
+            
+            orderInfo.innerHTML += "</ul>";
+            console.log(total);
+            orderInfo.innerHTML += 
+            `
+            <h1>Your order has a total of: ${total}</h1>
+            `
+        }
 
     </script>
 </body>
