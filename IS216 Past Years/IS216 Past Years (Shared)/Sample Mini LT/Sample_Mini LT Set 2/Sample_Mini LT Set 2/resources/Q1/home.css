@@ -11,3 +11,24 @@
 
 
 /* YOU MAY WRITE YOUR OWN CSS CODE BELOW */
+body{
+    background-image: url("images/beach.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100% ;
+}
+
+
+.world-peace{
+    margin: auto;
+    /* color:white;
+    background-color: black;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+    width: 50%;
+    height: 100px;
+    flex-direction: center;
+    vertical-align: baseline; */
+}
