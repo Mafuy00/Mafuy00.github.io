@@ -27,7 +27,7 @@ function get_all() {
         starId.innerHTML = "<ul>";
 
         for (let i = 0; i < array_stars.length; i++) {
-            starId.innerHTML+="<li>"+ array_stars[i].fullname + "</li>";
+            starId.innerHTML +=`<li> ${array_stars[i].fullname}</li>`;
             console.log(array_stars[i].fullname);
             // response.data.records[i].fullname;
           }
@@ -81,7 +81,7 @@ function get_all_template(){
 
         for(star of array_stars) {
             console.log(star);
-            result_str += '<li> ${star.fullname}</li>';
+            result_str += `<li> ${star.fullname}</li>`;
         }
 
         result_str += `

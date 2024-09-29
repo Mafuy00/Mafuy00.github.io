@@ -15,40 +15,46 @@ function displayRecipe() {
 
     // Add Code Below
     let displayIng = document.getElementById("ingredientList");
+    displayIng.innerHTML = '';
     console.log(displayIng);
 
     // this works but its innerHTML
     // for (ingredient of recipes[i].ingredients){
-    //   displayIng.innerHTML += `<li> ${ingredient} </li`;  
+    //   displayIng.innerHTML += `<li> ${ingredient} </li>`;  
     // }
 
     // using createElement method
-    let ingredients = recipes[i].ingredients;
+  //   let ingredients = recipes[i].ingredients;
 
-    for (let i=0;i<fruits.length;i++){
-      var newItem = document.createElement("li")
-      var node = document.createTextNode(fruits[i])
-      newItem.appendChild(node);
-      ul.appendChild(newItem);
-      console.log(fruits[i])
+  for (let ingredient of recipes[i].ingredients) {
+    let newItem = document.createElement("li");
+    let node = document.createTextNode(ingredient);
+    newItem.appendChild(node);
+    displayIng.appendChild(newItem);
   }
 
 
-   return;
+  //  return;
 
 }
 
 function updateButtonState() {
     // Debug the following code
     // There is no need to add additional code
-    if (i==recipes.length)
+    // Disable next button if at the end
+    // document.getElementById("btnNext").disabled = (i >= recipes.length - 1);
+    // Disable previous button if at the start
+    // document.getElementById("btnPrev").disabled = (i <= 0);
+    if (i>=recipes.length) {
       document.getElementById("btnNext").disabled = true
-    else
+    } else{
       document.getElementById("btnNext").disabled = false
-    if (i<0)
+    }
+    if (i<0){
       document.getElementById("btnPrev").disabled = true
-    else
+    } else{
       document.getElementById("btnPrev").disabled = false
+    }
   }
 
 
@@ -56,9 +62,9 @@ function changeRecipe(advance) {
     // Debug the following code
     // There is no need to add any additional code
     if (advance)
-        i--;
-    else
         i++;
+    else
+        i--;
 
     displayRecipe();
 
