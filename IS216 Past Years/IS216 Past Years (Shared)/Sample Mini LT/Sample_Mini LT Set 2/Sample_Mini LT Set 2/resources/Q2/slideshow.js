@@ -13,7 +13,7 @@ function display_default() {
     // Part A
     // YOUR CODE GOES HERE
     // YOU MAY ADD MORE FUNCTION(S) IF YOU WISH
-
+    
     
     console.log("===[END] display_default() ===")
 

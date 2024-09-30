@@ -18,10 +18,24 @@ body{
     background-size: 100% 100% ;
 }
 
+.center{
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
 
 .world-peace{
     margin: auto;
-    /* color:white;
+    width: 60%;
+    /* border: 3px solid #73AD21; */
+    padding: 20px;    
+    color: white;
+    background-color: black;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    /* margin: auto;
+    color:white;
     background-color: black;
     text-align: center;
     margin-top: 30px;
@@ -31,4 +45,32 @@ body{
     height: 100px;
     flex-direction: center;
     vertical-align: baseline; */
+}
+
+.world-peace p{
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+
+}
+
+.ukraine{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    /* width: 100vh;
+    height: 100vh; */
+}
+
+.russia{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    /* width: 100vh;
+    height: 100vh; */
 }
