@@ -1,0 +1,105 @@
+/*
+    Name:  Jin Yun Lin
+    Email: yunlin.jin.2022
+*/
+
+/* YOU MAY MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+}
+
+header{
+    background-color: #283593;
+    color: white;
+    /* display: inline; */
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+nav a {
+    display: inline;
+    color: white;
+    text-decoration: none;
+    word-spacing: 30px;
+    margin-left: 10px;
+    font-size: large;
+    padding: 5px;
+}
+
+nav a:hover{
+    background-color: #BF039F;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.speaker{
+    border: 2px solid rgb(172, 172, 172);
+    background-color: lightgrey;
+    text-align: center;
+    padding: 10px;
+}
+
+.speaker img{
+    max-height: 100px;
+    /* width: 100px; */
+    position: relative;
+}
+
+.speaker:hover{
+    transform: scale(1.05);
+}
+
+section{
+    display: flex;
+    margin: 30px;
+}
+
+footer{
+    text-align: center;
+    font-size: large;
+    background-color: #1E88E5;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.icons span:hover{
+    font-size: 101.5%;
+}
+
+button{
+    margin:auto;
+    align-items: center;
+    position: absolute;
+    /* top: 50%; */
+    left: 40%;
+}
+
+.register-btn{
+    margin: auto;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.register-btn:hover{
+    background-color: #388E3C;
+    /* box-shadow: 1px 1px grey; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    /* -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc; */
+}

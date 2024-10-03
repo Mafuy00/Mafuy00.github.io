@@ -1,0 +1,26 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+select, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#packageDetails {
+    margin-top: 20px;
+}
+
+#packageDetails p {
+    font-size: 18px;
+}

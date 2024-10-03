@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Package Search</title>
+    <link rel="stylesheet" href="travel.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <!-- DO NOT MODIFY THIS FILE -->
+
+    <div class="container">
+
+        <h1>Travel Package Search</h1>
+
+        <!-- Dropdown for selecting travel package -->
+        <label for="packageSelect">Select a Travel Package:</label>
+        <select id="packageSelect">
+            <option value="">-- Make Your Selection --</option>
+            <option value="Korea">Korea DMZ 6N7D Land Tour</option>
+            <option value="Argentina">Argentina-Antarctica 9N10D Cruise</option>
+            <option value="Kenya">Kenya Nairobi 4N5D Safari Tour</option>
+        </select>
+
+        <!-- Button to trigger API request -->
+        <button id="getPackageBtn" disabled>Get Package</button>
+
+        <!-- Package Details Section -->
+        <div id="packageDetails" style="display: none">
+            <p><strong>Package Name:</strong> <span id="packageName"></span></p>
+            <p><strong>Duration:</strong> <span id="packageDuration"></span></p>
+            <p><strong>Description:</strong> <span id="packageDescription"></span></p>
+        </div>
+    </div>
+
+    <script src="travel.js"></script>
+
+</body>
+</html>

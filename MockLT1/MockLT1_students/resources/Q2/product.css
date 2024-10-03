@@ -1,0 +1,20 @@
+/*
+    Name:  Jin Yun Lin
+    Email: yunlin.jin.2022
+*/
+
+/* YOU MAY MODIFY THIS FILE 
+   BUT this CSS file has all the styling
+   required for this question.
+*/
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body {
+    font-size: 16px;
+}
+
+
