@@ -26,7 +26,7 @@ nav a {
     color: white;
     text-decoration: none;
     word-spacing: 30px;
-    margin-left: 10px;
+    margin: 0px 20px;
     font-size: large;
     padding: 5px;
 }
@@ -36,6 +36,12 @@ nav a:hover{
     border-radius: 5px;
     text-decoration: none;
     padding: 5px;
+}
+
+#speakers {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .speaker{
@@ -73,8 +79,15 @@ footer{
     width: 100%;
 }
 
-.icons span:hover{
-    font-size: 101.5%;
+span {
+    margin: 0px 15px;
+}
+
+span:hover{
+    /*scale does not work*/
+    /* transform: scale(1.5,1.5); */
+    /* font-size-adjust: 1.5; */
+    font-size: 1.5em;
 }
 
 button{
@@ -82,7 +95,9 @@ button{
     align-items: center;
     position: absolute;
     /* top: 50%; */
-    left: 40%;
+    /* left: 48%; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 .register-btn{
