@@ -41,10 +41,11 @@
                 }
             },
             created() { // created is a hook that executes as soon as Vue instance is created
-                axios.get('http://localhost/is216/REST/blog/getPosts.php')
+                axios.get('http://localhost/Mafuy00.github.io/Week9/REST/REST/blog/getPosts.php')
                 .then(response => {
                     // this gets the data, which is an array, and pass the data to Vue instance's posts property
                     this.posts = response.data
+                    console.log(response.data);
                 })
                 .catch(error => {
                     this.posts = [{ entry: 'There was an error: ' + error.message }]

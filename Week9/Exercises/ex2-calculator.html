@@ -27,6 +27,37 @@
  
   <script>
     //TODO: create a Vue instance to complete the task
+    const vm = Vue.createApp({
+      data() {
+        return {
+            selectedOp: '',
+            operators: [
+               '+',
+               '-',
+               '*',
+               '/',
+               '%'
+            ]
+          } 
+        },
+        computed:{
+                result(){
+                  if (this.selectedOp == "+") {
+                    return this.x + this.y;
+                  } else if (this.selectedOp == "-"){
+                    return this.x - this.y;
+                  } else if (this.selectedOp == "*"){
+                    return this.x * this.y;
+                  } else if (this.selectedOp == "/"){
+                    return this.x / this.y;
+                  } else if (this.selectedOp == "%"){
+                    return this.x % this.y;
+                  }
+                    
+                  return 0;
+                }
+            }
+      }).mount('#app')
   </script>
 </body>
 </html>
