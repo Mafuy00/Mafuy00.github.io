@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Vue.js Calculator</title>
+
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  
+  <style>
+    p, input { font-family: monospace; }
+    p { white-space: pre; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p>x <input v-model.number="x"></p>
+    <select v-model="selectedOp">
+        <option v-for="op in operators" >{{ op }}</option>
+    </select>
+    <p>y <input v-model.number="y"></p>
+    
+    <p>---------------------</p>
+
+    <p>= {{result}}</p>
+  </div>
+ 
+  <script>
+    //TODO: create a Vue instance to complete the task
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compute Age</title>
+
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <label>Kindly enter your birthday:
+        <input v-model = "birthday" placeholder="MM/DD/YYYY"></label>
+        <p> Your age is: {{age}} </p>
+    </div> 
+    <script>
+        //todo: create a Vue instance to finish the task
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    birthday: ''
+                }
+            },
+            computed:{
+                age(){
+                    if (!this.birthday) return 'Please enter your birthday';
+                    // gets the entered birthday and converts it to Date format
+                    const birthDate = new Date(this.birthday);
+                    // gets today's date
+                    const today = new Date();
+                    // Get the age by minusing the years
+                    let age = today.getFullYear() - birthDate.getFullYear();
+                    // const monthDiff = today.getMonth() - birthDate.getMonth();
+                    // if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    //     age--;
+                    // }
+                    
+                    return age;
+                }
+            }
+        }).mount('#app')
+        // Vue.createApp({
+        //     data() {
+        //         return {
+        //             fName: 'Mike',
+        //             lName: 'Jones',
+        //             birthday: 
+        //         }
+        //     },
+        //     computed: {
+        //         age() {  // getter
+        //                 // `this` points to this vm instance
+        //                 return this.fName + ' ' + this.lName   
+        //         } 
+        //     }
+        // }).mount('#app')
+    </script>
+
+</body>
+</html>
