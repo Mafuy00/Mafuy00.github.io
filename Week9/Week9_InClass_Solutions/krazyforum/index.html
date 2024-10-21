@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>KrazyForum API Documentation</title>
+</head>
+<body>
+
+    <h1>KrazyForum API v1.0 - Documentation</h1>
+    
+    <hr>
+    
+    
+    <h2>read</h2>
+    <p>
+        <b>Description</b>
+        <br>
+        Returns a collection of posts in JSON format.
+    </p>
+    <p>
+        <b>HTTP request</b>
+        <br>
+        
+        <font color="red" face="courier">GET
+            <font color="blue">http://localhost/krazyforum/api/forum/read.php</font>
+        </font>
+    </p>
+
+
+
+    <hr>
+
+    
+    <h2>search</h2>
+    <p>
+        <b>Description</b>
+        <br>
+        Returns a collection of posts matching the search query in JSON format.
+    </p>
+    <p>
+        <b>HTTP request</b>
+
+        <ul>
+
+            <li>
+                Return all posts whose author is the <b>specified author</b>
+                <br>
+
+                <font color="red" face="courier">GET
+                    <font color="blue">http://localhost/krazyforum/api/forum/search.php?a=brandon</font>
+                </font>
+                
+                <br>
+                where <b>a</b> is the <b>author</b> parameter<br>
+                and the parameter value is case-insensitive (e.g. brandon, DARRYL, Yin kit, nICK).
+            </li>
+
+
+            <br>
+
+            <li>
+                Return all posts whose <b>category</b> is the <b>specified category</b>.
+                <br>
+
+                <font color="red" face="courier">GET
+                    <font color="blue">http://localhost/krazyforum/api/forum/search.php?c=sports</font>
+                </font>
+                
+                <br>
+                where <b>c</b> is the <b>category</b> parameter<br>
+                and the parameter value is case-insensitive (e.g. Love, sports, Pets, FOOD).
+            </li>
+
+
+            <br>
+
+            <li>
+                Return all posts whose author is the <b>specified author</b> <b><i><font color='green'>AND</font></i></b> <b>category</b> is the <b>specified category</b>.
+                <br>
+
+                <font color="red" face="courier">GET
+                    <font color="blue">http://localhost/krazyforum/api/forum/search.php?a=darryl&c=love</font>
+                </font>
+                
+                <br>
+                where:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>a</b> is the <b>author</b> parameter<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i><font color='green'>AND</font></i></b> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>c</b> is the <b>category</b> parameter.<br>
+                Both parameter values are case-insensitive.
+            </li>
+
+        </ul>
+    </p>
+
+
+
+    
+    <hr>
+
+
+
+    <h2>write</h2>
+    <p>
+        <b>Description</b>
+        <br>
+        Writes a comment into the forum.
+    </p>
+    <p>
+        <b>HTTP request</b>
+        <br>
+        
+        <font color="red" face="courier">GET
+            <font color="blue">http://localhost/krazyforum/api/forum/write.php</font>
+        </font>
+
+        <br><br>
+        <b>Required Parameters</b>
+        <table border="1">
+            <tr>
+                <th>Parameter Name</th>
+                <th>Parameter Type</th>
+                <th>Parameter Value</th>
+            </tr>
+            <tr>
+                <td>author</td>
+                <td>String</td>
+                <td>Sanchos</td>
+            </tr>
+            <tr>
+                <td>category</td>
+                <td>String</td>
+                <td>Food</td>
+            </tr>
+            <tr>
+                <td>comment</td>
+                <td>String</td>
+                <td>I love mala. I wish I had it everyday.</td>
+            </tr>
+        </table>
+    </p>
+
+
+
+
+    <hr>
+    
+    <footer>&copy; Copyright 2024 Krazy Woman</footer>
+</body>
+</html>

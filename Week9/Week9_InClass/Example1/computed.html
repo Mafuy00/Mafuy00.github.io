@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 1 - Vue.js Computed Properties vs Methods</title>
+    
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="root">
+
+        <h2>Computed Properties Example</h2>
+
+        <label for="first_name">First Name: </label>
+        <input type="text" v-model="first_name" id="first_name">
+
+        <br><br>
+
+        <label for="last_name">Last Name: </label>
+        <input type="text" v-model="last_name" id="last_name">
+
+        <hr>
+
+        <!-- Method -->
+        <h2>
+            (1) Method get_fullname() <br>
+            {{ get_fullname() }}
+        </h2>
+
+
+        <hr>
+
+
+        <!-- Computed Property -->
+        <h2>
+            (1) Computed property fullname <br>
+            {{ fullname }}
+        </h2>
+
+
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="computed.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2 - Forum</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <!-- Make sure that the Vue app (inside weather.js)
+         is mounted to this 'root' element that encases
+         child HTML elements that leverage Vue stuff.
+    -->
+    <div id="root">
+
+        <h1>Krazy Forum Posts</h1>
+
+        <hr>
+
+        <table border="1">
+
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Comment</th>
+            </tr>
+
+            <tr v-for="post of posts">
+                <td>
+                    {{ post.id }}
+                </td>
+                <td>
+                    {{ post.author }}
+                </td>
+                <td>
+                    {{ post.category }}
+                </td>
+                <td>
+                    {{ post.comment }}
+                </td>
+            </tr>
+            
+
+        </table>
+
+
+        <hr>
+        <h2>Make a new post</h2>
+
+        Author:
+        <!-- Use v-model to display the current value of
+         'new_author' data property and also to capture the new
+         input value -->
+        <input type="text">
+
+        <br>
+        Category:
+        <!-- Use v-model to display the current value of
+         'new_category' data property and also to capture the new
+         input value -->
+        <input type="text">
+
+        <br>
+        Comment:
+        <!-- Use v-model to display the current value of
+         'new_comment' data property and also to capture the new
+         input value -->
+        <input type="text" size="40">
+
+        <br><br>
+
+
+        <!--
+         1) Use v-on:click or @click such that when the button
+            is pressed, it will call insert_new_post() method.
+
+         2) Enable this button only if all 3 inputs are not empty (user keyed in something)
+              - new_author
+              - new_category
+              - new_comment
+            You can use v-bind:disabled="write JavaScript code to check for a certain condition or more"
+         -->
+        <button>
+            Make a new post
+        </button>
+
+
+    </div>
+
+
+
+    <!-- External Custom JavaScript -->
+    <script src="forum.js"></script>
+
+</body>
+</html>
