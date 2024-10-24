@@ -17,6 +17,7 @@
             height: 200px;
         }
     </style>
+<<<<<<< HEAD
     
 </head>
 <body>
@@ -77,5 +78,34 @@
     <!-- External Custom JavaScript -->
     <script src="weather.js"></script>
     
+=======
+</head>
+<body>
+    <div id="root">
+        <h1>World City Weather Checker</h1>
+
+        City Name:
+        <input type="text" v-model="city">
+        <br><br>
+
+        <button @click="check_weather" :disabled="city === ''">
+            Check Weather
+        </button>
+
+        <hr>
+        <h2>Weather</h2>
+
+        <p v-for="photo in weather_photo_paths">
+            <img :src="photo">
+        </p>
+
+        <hr>
+        <h2>Temperature</h2>
+
+        <img :src="temperature_photo_path">
+    </div>
+
+    <script src="weather.js"></script>
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
 </body>
 </html>

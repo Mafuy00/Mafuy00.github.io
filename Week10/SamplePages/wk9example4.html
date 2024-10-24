@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id = "counter">
+        <button-counter id='1'></button-counter>
+
+        <button-counter id='2'></button-counter>
+
+        <button-counter id='3'></button-counter>
+    </div>
+  
+    <script>
+        const app = Vue.createApp({
+            
+        });
+
+        app.component('button-counter', {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            props: ['id'],
+            template: ` <div>
+                            <p><button @click="count++">Counter {{id}}</button>
+                            You clicked {{count}} times </p>
+                        </div>`
+        })
+
+        app.mount('#counter')
+    </script>
+
+  
+</body>
+</html>

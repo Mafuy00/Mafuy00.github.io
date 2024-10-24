@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1 - Weather API</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div id="root">
+
+        <h1>World City Weather Checker</h1>
+
+        City Name:
+        <input type="text" v-model="city">
+        <br><br>
+
+
+        <!-- DEBUG -->
+        <!-- <h2>City input: {{ city }}</h2> -->
+
+
+        <button 
+            v-on:click="check_weather()"
+            v-bind:disabled="city.length == 0">
+            Check Weather
+        </button>
+
+        
+        <hr>
+        <h2>Weather</h2>
+
+        <p v-for="photo of weather_photo_paths">
+            <img v-bind:src="photo">
+        </p>
+
+
+        <hr>
+        <h2>Temperature</h2>
+        <img v-bind:src="temperature_photo_path">
+        
+
+
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="weather.js"></script>
+    
+</body>
+</html>

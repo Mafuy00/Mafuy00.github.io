@@ -3,7 +3,11 @@ const app = Vue.createApp({
     // Data Properties
     data() {
         return {
+<<<<<<< HEAD
             stars: [] // Empty Array
+=======
+            
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
         }
     },
 
@@ -23,6 +27,7 @@ const app = Vue.createApp({
 
                 console.log("=== [GOT API RESPONSE] get_all_stars() ")
 
+<<<<<<< HEAD
                 console.log(response.data.records); // this is an array of objects
 
                 // 'this' is a special keyword
@@ -33,6 +38,9 @@ const app = Vue.createApp({
                 //     stars.push(star_obj.fullname);
                 //     console.log(star_obj.fullname);
                 // }
+=======
+
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
             })
             .catch(error => {
                 console.log(error.message)
@@ -47,7 +55,11 @@ const app = Vue.createApp({
     // This will run when the page loads for the first time
     created() {
         console.log("=== [START] created() ===");
+<<<<<<< HEAD
         // this.get_all();
+=======
+        
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
         console.log("=== [END] created() ===");
     }
 

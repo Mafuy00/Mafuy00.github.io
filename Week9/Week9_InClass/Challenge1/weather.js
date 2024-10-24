@@ -1,9 +1,15 @@
 var app = Vue.createApp({
+<<<<<<< HEAD
     
     // Data Properties
     data() {
         return {
             
+=======
+    // Data Properties
+    data() {
+        return {
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
             // DO NOT MODIFY THIS DATA PROPERTY
             weather_types: [
                 "Clear",
@@ -54,13 +60,18 @@ var app = Vue.createApp({
     },
 
     methods: {
+<<<<<<< HEAD
 
         check_weather() {
 
+=======
+        check_weather() {
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
             console.log("=== [START] check_weather() ===");
 
             let api_endpoint_url = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.appid}&units=metric`;
             console.log(api_endpoint_url)
+<<<<<<< HEAD
             
             axios.get(api_endpoint_url)
             .then(response => {
@@ -83,6 +94,35 @@ var app = Vue.createApp({
                 // Clear the input field
                 this.city = '';
                 
+=======
+
+            axios.get(api_endpoint_url)
+            .then(response => {
+                // Inspect the response.data
+                console.log(response.data)
+
+                // 1) Retrieve weather info such as "Rain"
+                //    from response.data
+                let weather = response.data.weather[0].main;
+                let weatherImgPath = this.weather_type_images[weather];
+                this.weather_photo_paths = [weatherImgPath];
+
+                // 2) Retrieve temperature Celsius such as 30.5
+                //    from response.data
+                let temp = response.data.main.temp;
+                let tempImgPath;
+                if (temp > 25) {
+                    tempImgPath = this.temp_images["Hot"];
+                } else if (temp < 5) {
+                    tempImgPath = this.temp_images["Cold"];
+                } else {
+                    tempImgPath = this.temp_images["Okay"];
+                }
+                this.temperature_photo_path = tempImgPath;
+
+                // Clear the input field
+                this.city = '';
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02
             })
             .catch(error => {
                 console.log(error.message);
@@ -91,9 +131,16 @@ var app = Vue.createApp({
             console.log("=== [END] check_weather() ===");
         }
     }
+<<<<<<< HEAD
 
 });
 
 
 // Is the Vue app mounted to the "root" element in weather.html?
 // YOUR CODE GOES HERE
+=======
+});
+
+// Mount the Vue app to the "root" element in weather.html
+app.mount('#root');
+>>>>>>> 962da8cc2b61f66c48449b2d12420cc8b5ebbb02

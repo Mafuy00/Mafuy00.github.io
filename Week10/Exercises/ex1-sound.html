@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        Sound level
+        <input type="number" min="0" max="3" v-model="soundLevel"> 
+        <!-- TODO: Add Code Here to make use of the component -->
+        <!-- <br>
+        Sound level
+        <input type="number" min="0" max="3" v-model="soundLevel"> 
+        <br>
+        Sound level
+        <input type="number" min="0" max="3" v-model="soundLevel"> 
+        <br>
+        Sound level
+        <input type="number" min="0" max="3" v-model="soundLevel">  -->
+    </div>
+    
+    <script>
+        const app = Vue.createApp({
+            
+        });
+
+        app.component('sound-icon', {
+            data() {
+                return {
+                    soundEmojis: ['🔇', '🔈', '🔉', '🔊']
+                } 
+            },
+            template: `
+            <br>
+            Sound level
+            <input type="number" min="0" max="3" v-model="soundLevel"> {{soundEmojis}}
+            `, // TODO: add your template code here
+        })
+
+        //TODO: Anything else is missing?        
+    </script>
+    
+    
+</body>
+</html>

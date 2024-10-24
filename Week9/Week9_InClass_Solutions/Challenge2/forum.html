@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2 - Forum</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <div id="root">
+
+        <!-- <h1>Test get_posts()</h1>
+        <button v-on:click="get_posts()">
+            Test get_posts()
+        </button>
+
+        <hr>
+
+        {{ posts }} -->
+
+        <h1>Krazy Forum Posts</h1>
+
+        <hr>
+
+        <table border="1">
+
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Comment</th>
+            </tr>
+
+            <tr v-for="post of posts">
+                <td>
+                    {{ post.id }}
+                </td>
+                <td>
+                    {{ post.author }}
+                </td>
+                <td>
+                    {{ post.category }}
+                </td>
+                <td>
+                    {{ post.comment }}
+                </td>
+            </tr>
+            
+
+        </table>
+
+        <hr>
+        <h2>Make a new post</h2>
+
+        Author:
+        <input type="text" v-model="new_author">
+
+        <br>
+        Category:
+        <input type="text" v-model="new_category">
+
+        <br>
+        Comment:
+        <input type="text" v-model="new_comment" size="40">
+
+        <br><br>
+
+        <button v-on:click="insert_new_post()"
+            v-bind:disabled="new_author.length == '' || new_category.length == '' || new_comment == ''">
+            Make a new post
+        </button>
+
+
+    </div>
+
+
+
+    <!-- External Custom JavaScript -->
+    <script src="forum.js"></script>
+
+</body>
+</html>
