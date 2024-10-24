@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1 - Weather API</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <!-- Make sure that the Vue app (inside weather.js)
+         is mounted to this 'root' element that encases
+         child HTML elements that leverage Vue stuff.
+    -->
+    <div id="root">
+
+        <h1>World City Weather Checker</h1>
+
+        City Name:
+        <!-- Use v-model to display the current value of
+         'city' data property and also to capture the new
+         input value -->
+        <input type="text">
+        <br><br>
+
+
+        <!--
+         1) Use v-on:click or @click such that when the button
+            is pressed, it will call check_weather() method.
+
+         2) Disable this button if the city input field is empty.
+            Enable it only if the user's keyed in something.
+            You can use v-bind:disabled="write JavaScript code to check for a certain condition"
+         -->
+        <button v-on:click="weather_types">
+            Check Weather
+        </button>
+
+        
+        <hr>
+        <h2>Weather</h2>
+
+        <p v-for="photo of weather_photo_paths">
+            <!-- Use v-bind or :bind to dynamically set
+                 the src value to variable 'photo' that
+                 was just retrieved in v-for loop -->
+            <img src="photo">
+        </p>
+
+
+        <hr>
+        <h2>Temperature</h2>
+
+        <!-- Use v-bind or :bind to dynamically set
+             the src value to variable 'temperature_photo_path'
+             data property.
+        -->
+        <img src="temperature_photo_path">
+        
+
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="weather.js"></script>
+    
+</body>
+</html>

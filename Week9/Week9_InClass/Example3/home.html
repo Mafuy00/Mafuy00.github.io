@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3 - Vue.js Axios API Interaction</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <div id="root">
+
+        <h1>Krazy Stars</h1>
+        
+        <button v-on:click="get_all()">
+            Get All Stars
+        </button>
+
+        <hr>
+        stars array length: {{stars.length}}
+        <hr>
+
+        <!-- we can also use v-show in place of v-if -->
+        <div v-if="stars.length > 0">
+            <h3>See all these stars!!!</h3>
+
+            <!-- Vue directive paragraph multiple times-->
+            <ul>
+                <li v-for="star of stars">
+                <!-- star is a Javascript object-->
+                <!-- Using in instead of 'of' shows the index array-->
+                    {{star.fullname}}
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- External Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
