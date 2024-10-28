@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3 - Shopping</title>
+
+    <!-- Vue.js Version 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="main">
+
+        <h1>Shopping Cart</h1>
+
+        <h2>
+            Total Cost: ${{ total_cost }}
+        </h2>
+
+        <product-component
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+            @add-to-cart="add_to_cart"
+            >
+            <!-- add-to-cart is called 'emit' -->
+        </product-component>
+
+        <hr>
+
+        <product-component
+        v-for="product in clearance_products"
+        :key="product.id"
+        :product="product"
+        @add-to-cart="add_to_cart"
+        >
+        <p style="color:blue; font-style: italic;">
+            Grab this now! Discount at {{product.discount}} !!!
+        </p>
+        <!-- add-to-cart is called 'emit' -->
+    </product-component>
+
+    </div>
+
+    
+    <!-- External Custom JavaScript -->
+    <script src="shopping.js"></script>
+    
+</body>
+</html>

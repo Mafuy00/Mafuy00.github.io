@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2 - Office</title>
+
+    <!-- Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- DO NOT MODIFY THIS INTERNAL CSS -->
+    <style>
+        img {
+            width: 100%
+        }
+
+        #box {
+            background-color: rgb(212, 255, 255);
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- DO NOT MODIFY THIS HTML -->
+    <div id="main">
+
+        <!--
+            people is an Object type data property of Vue instance
+            key: person_name
+            value: details
+        
+        -->
+
+        <div id="box" v-for="(details, person_name) in people">
+
+            <work-component
+                :person_name="person_name"
+                :details="details.work">
+            </work-component>
+
+            <personal-component
+                :person_name="person_name"
+                :details="details.personal">
+            </personal-component>
+
+            
+            <!-- <div>
+                <h2> Work details of {{person_name}}</h2>
+                 <ul>
+                    <li v-for="(value, key) in details.work">
+                        {{upper_first_letter(key)}} : {{value}}
+                    </li>
+                    <li>Branch: {{details.work.branch}}</li>
+                    <li>Title: {{details.work.title}}</li>
+                    <li>Qualification: {{details.work.qualification}}</li>
+                    <li>Quote: {{details.work.quote}}</li> -->
+                 <!-- </ul> -->
+            <!-- </div>
+            
+            <div> -->
+                <!-- <h2> Personal details of {{person_name}}</h2>
+                
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <img v-bind:src="get_photo_url(details.personal.photo)">
+                            </td>
+                            <td>
+                                Relationship: {{details.personal.relationship}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Age: {{details.personal.age}}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table> -->
+
+                 <!-- <table style="border:1px double black;">
+                    <tr rowspan="2">
+                        <td>
+                            <img :src='get_photo_url()'>
+                        </td>
+                    </tr>
+                 </table> -->
+            <!-- </div> -->
+            
+            <!-- {{person_name}} -->
+
+            <!-- <hr> -->
+
+            <!-- {{details.work}} -->
+
+            <!-- <hr> -->
+
+            <!-- {{details.personal}} -->
+            <!-- YOUR CODE GOES HERE -->
+            
+        </div>
+
+    </div>
+    
+
+    <!-- External Custom JavaScript -->
+    <script src="office.js"></script>
+    
+</body>
+</html>
