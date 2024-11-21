@@ -53,8 +53,62 @@ Vue.createApp({
       // Part B - Edit determineWinner()  
       // to change this.roundWinner accordingly
       // 2 marks
-      //
-      //
+      
+      switch(this.vuekemonA.currentMove.type) {
+        
+        case "rock":
+          switch(this.vuekemonB.currentMove.type){
+            case "rock":
+              return "";
+              
+            case "scissors":
+              // code block
+              this.roundWinner = "A"; 
+              return "A";
+            case "paper":
+              // code block
+              this.roundWinner = "B";
+              return "B";
+          }
+          break;
+        case "scissors":
+          // code block
+          switch(this.vuekemonB.currentMove.type){
+            case "rock":
+              this.roundWinner = "B";
+              return "B";
+              
+            case "scissors":
+              // code block
+              return "";
+            case "paper":
+              // code block
+              this.roundWinner = "A";
+              return "A";
+              
+          }
+          break;
+        case "paper":
+          // code block
+          switch(this.vuekemonB.currentMove.type){
+            case "rock":
+              this.roundWinner = "A";
+              return "A";
+              
+            case "scissors":
+              // code block
+              this.roundWinner = "B";
+              return "B";
+            case "paper":
+              // code block
+              return "";
+              
+          }
+          break;
+        default:
+          return "";
+      }
+      
       // End Part B 
       
       // DO NOT EDIT

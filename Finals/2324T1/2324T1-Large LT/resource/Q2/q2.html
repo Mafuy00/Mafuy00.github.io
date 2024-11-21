@@ -12,7 +12,8 @@
     <!-- Font Awesome 4.7.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
     <!-- Vue.js -->
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.min.js
+"></script>  
     <style>
         .card {
           text-align: center;
@@ -120,7 +121,7 @@
         <div class="col-3">
             <div class="card">
                 <!-- Part A: Show vuekemon image in img below -->
-                <img class="card-img-top img-fluid rounded border">
+                <img :src="vuekemonA.img" class="card-img-top img-fluid rounded border">
             </div>
         </div>
     
@@ -137,7 +138,7 @@
         <div class="col-3">
             <div class="card">
                 <!-- Part A: Show vuekemon image in img below -->
-                <img class="card-img-top img-fluid rounded border">
+                <img :src="vuekemonB.img" class="card-img-top img-fluid rounded border">
             </div>
         </div>
     
@@ -153,17 +154,19 @@
             <div>
                 <p class="nameDiv">
                     <!-- Part A: Show vuekemon name here -->
+                    {{vuekemonA.name}}
+                    
                 </p>
                 <h4>Current Move</h4>
                 <p>
                     <span class="moveInfo">Move = </span>
                     <!-- Part A: Correct error below -->
-                    {{vuekemonA.currentMove}}
+                    {{vuekemonA.currentMove.label}}
                 </p>
                 <p>
                     <span class="moveInfo">Type =</span>
                     <!-- Part A: Correct error below -->
-                    {{vuekemonA.currentMove}}
+                    {{vuekemonA.currentMove.type}}
 
                     <i :class="[fa, fa_vuekemonA_completed]"></i>
                 </p>
@@ -171,7 +174,7 @@
                 h3 tag based on the return value of the 
                 winnerMsg(player) method.
                 -->
-                <h3 class="winner">
+                <h3 v-if="determineWinner() == 'A'" class="winner">
                    Round Winner! 
                 </h3>
             </div>
@@ -199,17 +202,18 @@
             <div>
                 <p class="nameDiv">
                     <!-- Part A: Show vuekemon name here -->
+                    {{vuekemonB.name}}
                 </p>
                 <h4>Current Move</h4>
                 <p>
                     <span class="moveInfo">Move = </span>
                     <!-- Part A: Correct error below -->
-                    {{vuekemonB.currentMove}}
+                    {{vuekemonB.currentMove.label}}
                 </p>
                 <p>
                     <span class="moveInfo">Type =</span>
                     <!-- Part A: Correct error below -->
-                    {{vuekemonB.currentMove}} 
+                    {{vuekemonB.currentMove.type}} 
                     
                     <i :class="[fa, fa_vuekemonB_completed]"></i>
                 </p>
@@ -217,7 +221,7 @@
                 h3 tag based on the return value of the 
                 winnerMsg(player) method.
                 -->
-                <h3 class="winner">
+                <h3 v-if="determineWinner() == 'B'" class="winner">
                     Round Winner! 
                  </h3>
             </div>
