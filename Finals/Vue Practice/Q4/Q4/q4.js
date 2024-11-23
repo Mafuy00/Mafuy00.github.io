@@ -31,6 +31,26 @@ const app = Vue.createApp({
         borrowBook(book, genre) {
             
             // YOUR CODE GOES HERE
+            this.borrowedBooks.push(book);
+
+            // Find and remove the book from the availableBooks list
+            const genreBooks = this.availableBooks[genre];
+            const bookIndex = genreBooks.findIndex(b => b.title === book.title);
+            if (bookIndex !== -1) {
+                genreBooks.splice(bookIndex, 1);
+            }
+
+            // Remove the genre key if there are no more books in this genre
+            if (this.availableBooks[genre].length === 0) {
+                delete this.availableBooks[genre];
+            }
+            // for (genre in this.availableBooks){
+            //     console.log(genre);
+            //     for (book of genre){
+            //         console.log(genre[book].title);
+            //     }
+            // }
+            
 
         },
         
@@ -38,6 +58,15 @@ const app = Vue.createApp({
         returnBook(index) {
             
             // YOUR CODE GOES HERE
+            // Find and remove the book from the borrowedBooks list
+            let returnedBook = this.borrowedBooks.splice(index, 1)[0];
+
+            // Add it back to the appropriate genre in availableBooks
+            const genre = returnedBook.genre; // Assuming the book object has a 'genre' property
+            if (!this.availableBooks[genre]) {
+                this.availableBooks[genre] = [];
+            }
+            this.availableBooks[genre].push(returnedBook);
 
         }
     }

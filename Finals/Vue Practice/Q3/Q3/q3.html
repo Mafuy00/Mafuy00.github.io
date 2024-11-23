@@ -14,7 +14,11 @@
         <h1>Grocery List Manager</h1>
 
         <!-- MODIFY AND COMPLETE THIS -->
-        <grocery-list>
+         <!-- bind groceryItems to the items prop -->
+        <grocery-list
+            :items = "groceryItems"
+            @add-to-list="addToShoppingList"
+        >
         </grocery-list>
 
 
@@ -24,12 +28,19 @@
 
             <ul>
                 <!-- MODIFY AND COMPLETE THIS -->
-                <li>
+                <!-- loop through each item in the shopping list to display it -->
+                <!-- declare index because used to remove the item -->
+                <li v-for="(item, index) in shoppingList" :key="item.name">
+                    {{ item.name }} - ${{ item.price }}
+                    <button class="remove" @click="removeFromShoppingList(index)">
+                        Remove
+                    </button>
+                    
                 </li>
             </ul>
 
             <!-- MODIFY AND COMPLETE THIS -->
-            <p>Total Cost: </p>
+            <p>Total Cost: ${{totalCost}}</p>
 
         </div>
 
