@@ -20,13 +20,23 @@ const app = Vue.createApp({
 app.component("product-list", {
 
     // COMPLETE THIS
-    props: [ ],
+    props: ["products"],
 
     // COMPLETE THIS
     template: `
         <div>
 
             ADD YOUR CODE HERE
+            <div v-for="item in products">
+                <ul>
+                    <li>{{item.name}}</li>
+                    <li>{{item.description}}</li>
+                    <li>{{item.votes}}</li>
+                </ul>
+
+            <button @click='vote(item, 1)'>Upvote</button>
+            <button @click='vote(item, -1)'>Downvote</button>
+            </div>
 
         </div>
     `,
@@ -39,6 +49,8 @@ app.component("product-list", {
         vote(product, value) {
             
             // YOUR CODE GOES HERE
+            // pass through item arr as the product, 1 = +1, -1 = -1
+            product.votes += value;
 
         }
     }
