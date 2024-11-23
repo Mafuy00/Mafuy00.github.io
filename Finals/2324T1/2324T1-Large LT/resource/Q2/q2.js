@@ -11,7 +11,13 @@ Vue.createApp({
       round: 0,
       roundWinner: "",
       fa: "fa",
-      // you can create new data variables below if you wish
+      // you can create new data variables if you wish
+      // For example:
+      moveRelationships: {
+        rock: { rock: '', paper: 'B', scissors: 'A' },
+        paper: { rock: 'A', paper: '', scissors: 'B' },
+        scissors: { rock: 'B', paper: 'A', scissors: '' },
+      },
     }
   },
   created() {
@@ -36,7 +42,6 @@ Vue.createApp({
 
       this.reroll();
     },
-
     reroll() {
       this.round++
       let randInt1 = Math.floor(Math.random() * 3)
@@ -47,74 +52,56 @@ Vue.createApp({
 
       this.determineWinner()
     },
-
-    
     determineWinner() {
       // Part B - Edit determineWinner()  
       // to change this.roundWinner accordingly
       // 2 marks
-      
-      switch(this.vuekemonA.currentMove.type) {
-        
-        case "rock":
-          switch(this.vuekemonB.currentMove.type){
-            case "rock":
-              return "";
-              
-            case "scissors":
-              // code block
-              this.roundWinner = "A"; 
-              return "A";
-            case "paper":
-              // code block
-              this.roundWinner = "B";
-              return "B";
-          }
-          break;
-        case "scissors":
-          // code block
-          switch(this.vuekemonB.currentMove.type){
-            case "rock":
-              this.roundWinner = "B";
-              return "B";
-              
-            case "scissors":
-              // code block
-              return "";
-            case "paper":
-              // code block
-              this.roundWinner = "A";
-              return "A";
-              
-          }
-          break;
-        case "paper":
-          // code block
-          switch(this.vuekemonB.currentMove.type){
-            case "rock":
-              this.roundWinner = "A";
-              return "A";
-              
-            case "scissors":
-              // code block
-              this.roundWinner = "B";
-              return "B";
-            case "paper":
-              // code block
-              return "";
-              
-          }
-          break;
-        default:
-          return "";
+      let currentMoveA = this.vuekemonA.currentMove
+      let currentMoveB = this.vuekemonB.currentMove
+
+      // if moveRelationships lookup object defined in Vue's data
+      // this.roundWinner = this.moveRelationships[currentMoveA.type][currentMoveB.type];
+
+      if(currentMoveA.type == "rock") {
+        if(currentMoveB.type == "rock") {
+          this.roundWinner = ""
+        }
+        if(currentMoveB.type == "paper") {
+          this.roundWinner = "B"
+        }
+        if(currentMoveB.type == "scissors") {
+          this.roundWinner = "A"
+        }
       }
-      
-      // End Part B 
-      
+      else if(currentMoveA.type == "paper") {
+        if(currentMoveB.type == "paper") {
+          this.roundWinner = ""
+        }
+        if(currentMoveB.type == "scissors") {
+          this.roundWinner = "B"
+        }
+        if(currentMoveB.type == "rock") {
+          this.roundWinner = "A"
+        }
+      }
+      else if(currentMoveA.type == "scissors") {
+        if(currentMoveB.type == "scissors") {
+          this.roundWinner = ""
+        }
+        if(currentMoveB.type == "rock") {
+          this.roundWinner = "B"
+        }
+        if(currentMoveB.type == "paper") {
+          this.roundWinner = "A"
+        }
+      }
+
       // DO NOT EDIT
       if (this.roundWinner === 'A') this.scoreA++;
       if (this.roundWinner === 'B') this.scoreB++;
       // END DO NOT EDIT
+
+      // End determineWinner()      
     },
   
     winnerMsg(player) {
@@ -129,15 +116,13 @@ Vue.createApp({
       return "fa-hand-" + this.vuekemonB.currentMove.type + "-o";
     },
 
-    // Part C - Complete code below
+    // Part C - Completed code
     // 1 mark
     percentWinA: function() {
-      // To edit and complete
-      return "% win for A";
+      return (this.scoreA / this.round * 100).toFixed(1) + "%";
     },
     percentWinB: function() {
-      // To edit and complete
-      return "% win for B";
+      return (this.scoreB / this.round * 100).toFixed(1) + "%";
     }
     // End of Part C
   }
