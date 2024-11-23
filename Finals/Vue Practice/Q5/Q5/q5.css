@@ -1,0 +1,37 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.add-task {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, select {
+    margin: 5px;
+    padding: 5px;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.task-section, .completed-section {
+    margin: 20px 0;
+}

@@ -1,0 +1,44 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.student {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.student h3 {
+    margin: 0;
+}
+
+button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.present {
+    background-color: #0415ff;
+    color: white;
+}
+
+button.absent {
+    background-color: #ff4400;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}

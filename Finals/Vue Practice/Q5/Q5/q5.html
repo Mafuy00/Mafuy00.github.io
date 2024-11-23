@@ -1,0 +1,51 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <script src="../MORE/vue.global.js"></script>
+    <script src="../MORE/axios.min.js"></script>
+    <link rel="stylesheet" href="q5.css">
+</head>
+<body>
+
+    <div id="app">
+        
+        <h1>To-Do List</h1>
+
+        <div class="add-task">
+            <h2>Add New Task</h2>
+            <input type="text" v-model="newTaskName" placeholder="Task Name">
+            <select v-model="newTaskPriority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button @click="addTask">Add Task</button>
+        </div>
+
+        <div class="task-section">
+            <h2>To-Do Tasks</h2>
+            <task-list 
+                :tasks="tasks" 
+                @mark-completed="markTaskAsCompleted">
+            </task-list>
+        </div>
+
+        <div class="completed-section">
+            <h2>Completed Tasks</h2>
+            <ul>
+                <li v-for="task in completedTasks" :key="task.name">
+                    {{ task.name }} ({{ task.priority }})
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <script src="q5.js"></script>
+
+</body>
+</html>

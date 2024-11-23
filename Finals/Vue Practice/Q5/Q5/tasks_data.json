@@ -1,0 +1,15 @@
+{
+    "High": [
+        { "name": "Finish project report", "priority": "High" },
+        { "name": "Prepare presentation", "priority": "High" },
+        { "name": "Study for WAD2 Final Exam", "priority": "High" }
+    ],
+    "Medium": [
+        { "name": "Clean the house", "priority": "Medium" },
+        { "name": "Grocery shopping", "priority": "Medium" }
+    ],
+    "Low": [
+        { "name": "Watch a movie", "priority": "Low" },
+        { "name": "Read a book", "priority": "Low" }
+    ]
+}

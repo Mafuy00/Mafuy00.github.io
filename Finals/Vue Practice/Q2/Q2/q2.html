@@ -1,0 +1,33 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <script src="../MORE/vue.global.js"></script>
+    <link rel="stylesheet" href="q2.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>Student Attendance Tracker</h1>
+        
+        <student-list 
+            :students="students" 
+            @update-attendance="updateAttendance">
+        </student-list>
+        
+        <div class="summary">
+            <h2>Attendance Summary</h2>
+            <p>Present: {{ totalPresent }}</p>
+            <p>Absent: {{ totalAbsent }}</p>
+        </div>
+
+    </div>
+
+    <script src="q2.js"></script>
+
+</body>
+</html>

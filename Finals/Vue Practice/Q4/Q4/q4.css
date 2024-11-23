@@ -1,0 +1,37 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.library-section, .borrowed-section {
+    margin: 20px 0;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.borrow {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.return {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}

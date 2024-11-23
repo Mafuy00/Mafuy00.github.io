@@ -1,0 +1,48 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.product {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin: 0;
+}
+
+.product p {
+    color: #555;
+}
+
+button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.upvote {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.downvote {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}

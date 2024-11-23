@@ -1,0 +1,41 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <script src="../MORE/vue.global.js"></script>
+    <script src="../MORE/axios.min.js"></script>
+    <link rel="stylesheet" href="q4.css">
+</head>
+<body>
+
+    <div id="app">
+        
+        <h1>Library Book Tracker</h1>
+
+        <div class="library-section">
+            <h2>Available Books</h2>
+            <book-list 
+                :books="availableBooks" 
+                @borrow-book="borrowBook">
+            </book-list>
+        </div>
+        
+        <div class="borrowed-section">
+            <h2>Borrowed Books</h2>
+            <ul>
+                <li v-for="(book, index) in borrowedBooks" :key="book.title">
+                    {{ book.title }} by {{ book.author }}
+                    <button @click="returnBook(index)">Return</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="q4.js"></script>
+
+</body>
+</html>
