@@ -1,0 +1,44 @@
+/*
+    
+Name:   
+Email:  
+
+*/
+
+
+/* All HTML span elements have   */   
+span { 
+
+    /* Blue, double border of 10px thickness  */
+    border: double 10px blue; 
+
+    /* Distance between its child content to top/bottom borders is 20px 
+        and to left/right borders is 30px */
+    padding: 20px 30px; 
+    /* alternate */
+    /* padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+/* For all HTML elements with class 'easy' have  */
+.easy { 
+    /* Text is 18px Courier */
+    font: 18px Courier; 
+    /* alternative */
+    /* font-size: 18px;
+    font-family: Courier; */
+
+    /* Text color is 255 red, 165 green, and 0 blue */
+    color: rgb(255, 165, 0);
+}
+
+/* For HTML element with id 'simple' has  */
+#simple { 
+    /* The image ‘bg.jpg’ as the background */
+    background-image: url("bg.jpg");  
+
+    /* Text is in bold.  */
+    font-weight: bold; 
+}

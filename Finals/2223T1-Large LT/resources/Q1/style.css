@@ -1,0 +1,25 @@
+/*
+    
+Name:   
+Email:  
+
+*/
+
+/* Your answer goes here */
+
+span{
+    border: 10px blue double;
+    padding: 20px 30px;
+}
+
+.easy{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: rgb(255,165,0);
+}
+
+#simple{
+    background-image: url(bg.jpg);
+    font-weight: bold;
+}
+

@@ -7,64 +7,92 @@ const milkBasePrice = 5
 const oilBasePrice = 8
 // END 
 
+
 function addToCart() {
     var groceryItem = document.getElementById('groceryItem');
     var quantity = document.getElementById('quantity');
 
     if (groceryItem.validity.valid && quantity.validity.valid && quantity.value > 0) {
         var selectedOption = groceryItem.options[groceryItem.selectedIndex];
-        var itemName = selectedOption.value; // Get the item's name (e.g., "Milk")
         var price = selectedOption.getAttribute('data-price');
-        var newQuantity = parseInt(quantity.value);
-        var itemId = itemName.toLowerCase(); // Unique ID based on the item name
-        var existingItem = document.getElementById(itemId);
+        var subtotal = quantity.value * price;
 
-        if (existingItem) {
-            // Update existing item's quantity and subtotal
-            var currentQuantity = parseInt(existingItem.getAttribute('data-quantity'));
-            var updatedQuantity = currentQuantity + newQuantity;
-            var updatedSubtotal = updatedQuantity * price;
+        // Part B - Completed code for add item feature
+        var cartDiv = document.getElementById('cart');
+        var itemDiv = document.getElementById(selectedOption.value.toLowerCase());
 
-            // Update the quantity and subtotal text without removing the delete button
-            var textNode = existingItem.querySelector(".item-text");
-            textNode.textContent = `${itemName} - Quantity: ${updatedQuantity}, Subtotal: $${updatedSubtotal}`;
-            existingItem.setAttribute('data-quantity', updatedQuantity);
-        } else {
-            // Create a new list item for the item
-            var li = document.createElement("li");
-            li.id = itemId; // Set unique ID for the item
-            li.setAttribute('data-quantity', newQuantity);
-            li.style.listStyle = "none";
-
-            // Add item text
-            var textNode = document.createElement("span");
-            textNode.className = "item-text";
-            textNode.textContent = `${itemName} - Quantity: ${newQuantity}, Subtotal: $${newQuantity * price}`;
-            li.appendChild(textNode);
-
-            // Add delete button
-            var deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delete Item";
-            deleteBtn.className = "btn btn-danger btn-sm ms-2";
-
-            // Add delete button functionality
-            deleteBtn.onclick = function () {
-                li.remove(); // Remove the item from the cart
-            };
-
-            li.appendChild(deleteBtn);
-            document.getElementById("cart").appendChild(li);
+        if (!itemDiv) {
+            // Item does not exist, create a new div
+            itemDiv = document.createElement('div');
+            itemDiv.id = selectedOption.value.toLowerCase();
+            itemDiv.classList.add('my-2')
+            cartDiv.appendChild(itemDiv);
         }
+
+        // Update data attributes and text in the element
+        itemDiv.dataset.quantity = parseInt(itemDiv.dataset.quantity || 0) + parseInt(quantity.value);
+        itemDiv.dataset.subtotal = parseInt(itemDiv.dataset.subtotal || 0) + subtotal;
+        itemDiv.innerText = `${selectedOption.value} - Quantity: ${itemDiv.dataset.quantity}, Subtotal: $${itemDiv.dataset.subtotal}`;
+
+        // End of Part B
+
+        // Part C - Completed code for delete button
+        var deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete Item';
+        deleteButton.classList.add('btn', 'btn-danger', 'ms-2');
+        deleteButton.addEventListener('click', function () {
+            cartDiv.removeChild(itemDiv);
+        });
+
+        itemDiv.appendChild(deleteButton);
+
+        // End of Part C
 
         // Reset the form
         document.getElementById('groceryForm').reset();
     }
 }
 
-
 function showFinalDetails() {
-    // Part D - To complete code for showFinalDetails()
-    //
-    //
+    // Part D - Completed code for showFinalDetails()
+    const items = ["rice", "milk", "oil"];
+    const dataArray = [];
+
+    let dataExist = false;
+
+    items.forEach(item => {
+        const data = {};
+        try {
+            data.subtotal = document.getElementById(item).dataset.subtotal;
+            data.item = item;
+            dataArray.push(data);
+            dataExist = true;
+        } catch (error) {
+        }
+    });
+
+    if (dataExist) {
+        const url = "q3.php";
+        console.log(dataArray)
+        axios.post(url, { data: dataArray })
+            .then(response => {
+                const finalResult = response.data;
+
+                const finalPriceElement = document.getElementById("finalPrice");
+                finalPriceElement.innerText = "";
+                finalPriceElement.style = "";
+
+                const priceText = finalResult.discountReached ?
+                    `Final Price (5% discount) = $${finalResult.finalTotal}` :
+                    `Final Price = $${finalResult.finalTotal}`;
+
+                finalPriceElement.innerText = priceText;
+
+                window.scrollTo(0, document.body.scrollHeight);
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+    }
     // End of Part D
-} 
+}
