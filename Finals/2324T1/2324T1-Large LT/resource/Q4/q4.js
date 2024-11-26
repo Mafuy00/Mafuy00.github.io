@@ -20,18 +20,40 @@ const app = Vue.createApp({
 // ------------- Do not edit the code above this line ------------------
 
 // (2) Define Vue component (vote-video)
-app.component('vote-video', {      
+app.component('vote-video', {     
+	props:["title","url","vindex"],
+	// emits: ["like"], 
 	template: `<div class="p-2">
 				<div>
-					<iframe width="180" height="100" src="https://www.youtube.com/embed/RiNcK5xK5S8?controls=1"  />
+					<iframe width="180" height="100" :src="url"  />
 				</div>
 				<div>	
-					<button style="border:none">&#10084</button> 
-					Video Index: 0 &nbsp; 
-					<a href="https://www.youtube.com/embed/RiNcK5xK5S8?controls=1" target="_new">SMU Software Engineering</a>
+					<button @click=onLike style="border:none">&#10084</button> 
+					Video Index: {{vindex}} &nbsp; 
+					<a :href="url" target="_new">{{title}}</a>
 			   </div>
-			  </div>`
+			  </div>`,
+	methods: {
+		onLike(){
+			this.$emit("like", this.vindex);
+		}
+	}
 })
+
+/* <tr v-for="(v, idx) in videos">
+	<td>{{idx}}</td>
+		<td>{{v.title}}</td>
+		<td>{{v.likes}}</td>
+	</tr> */
+
+/* <vote-video
+			v-for="(v, idx) in videos"
+				:key="idx"
+				:vindex="idx"
+				:url="v.url"
+				:title="v.title"
+				@like="onLike"
+		></vote-video> */
 
 // (3) mount Vue instance to HTML element
 const vm = app.mount('#root')
