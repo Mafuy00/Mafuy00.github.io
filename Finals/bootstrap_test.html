@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Nested Grid Visualizer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .grid-level-0 { background-color: #e3f2fd; }
+        .grid-level-1 { background-color: #bbdefb; }
+        .grid-level-2 { background-color: #90caf9; }
+        .grid-level-3 { background-color: #64b5f6; }
+
+        .column {
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            min-height: 100px;
+        }
+
+        .controls {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-add-nested {
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .btn-add-nested:hover {
+            opacity: 1;
+        }
+
+        .level-indicator {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .main-container {
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        .grid-container {
+            min-width: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid main-container">
+    <h1 class="mb-4">Bootstrap Nested Grid Visualizer</h1>
+
+    <!--u may face an overlap issue on the 2nd layer that causes issues 
+    with changing the col-span of the leftmost item in level 2. 
+    to fix this just make the other item have col-span 12-->
+
+    <div class="alert alert-info mb-4">
+        <ul class="mb-0">
+            <li>Click "Add Nested Grid" to create nested columns (up to 2 levels)</li>
+            <li>Use the dropdown to adjust column sizes</li>
+            <li>Different colors indicate nesting levels</li>
+        </ul>
+    </div>
+
+    <div class="grid-container p-3 border rounded">
+        <div class="row" id="rootGrid">
+            <div class="col-6">
+                <div class="column grid-level-0">
+                    <div class="controls">
+                        <select class="form-select form-select-sm w-auto" onchange="updateColumnSize(this)">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="6" selected>6</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="level-indicator">Level 0</span>
+                        <button class="btn btn-sm btn-outline-primary ms-auto btn-add-nested" onclick="addNestedGrid(this)">
+                            Add Nested Grid
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="column grid-level-0">
+                    <div class="controls">
+                        <select class="form-select form-select-sm w-auto" onchange="updateColumnSize(this)">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="6" selected>6</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="level-indicator">Level 0</span>
+                        <button class="btn btn-sm btn-outline-primary ms-auto btn-add-nested" onclick="addNestedGrid(this)">
+                            Add Nested Grid
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    function createColumn(size, level) {
+        const column = document.createElement('div');
+        column.className = `col-${size}`;
+        column.innerHTML = `
+                <div class="column grid-level-${level}">
+                    <div class="controls">
+                        <select class="form-select form-select-sm w-auto" onchange="updateColumnSize(this)">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="6" selected>6</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="level-indicator">Level ${level}</span>
+                        ${level < 2 ? `
+                            <button class="btn btn-sm btn-outline-primary ms-auto btn-add-nested" onclick="addNestedGrid(this)">
+                                Add Nested Grid
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        return column;
+    }
+
+    function addNestedGrid(button) {
+        const parentColumn = button.closest('.column');
+        const currentLevel = parseInt(parentColumn.classList[1].split('-')[2]);
+        const newLevel = currentLevel + 1;
+
+        // Create new row
+        const newRow = document.createElement('div');
+        newRow.className = 'row';
+
+        // Add two columns to the row
+        newRow.appendChild(createColumn(6, newLevel));
+        newRow.appendChild(createColumn(6, newLevel));
+
+        // Add row to parent column
+        parentColumn.appendChild(newRow);
+
+        // Remove the add button from parent
+        button.remove();
+
+        // Add remove button
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'btn btn-sm btn-outline-danger ms-auto';
+        removeBtn.onclick = function() { removeNestedGrid(this); };
+        removeBtn.textContent = 'Remove Nested Grid';
+        parentColumn.querySelector('.controls').appendChild(removeBtn);
+    }
+
+    function removeNestedGrid(button) {
+        const parentColumn = button.closest('.column');
+        const row = parentColumn.querySelector('.row');
+        if (row) {
+            row.remove();
+
+            // Remove the remove button
+            button.remove();
+
+            // Add back the add button
+            const addBtn = document.createElement('button');
+            addBtn.className = 'btn btn-sm btn-outline-primary ms-auto btn-add-nested';
+            addBtn.onclick = function() { addNestedGrid(this); };
+            addBtn.textContent = 'Add Nested Grid';
+            parentColumn.querySelector('.controls').appendChild(addBtn);
+        }
+    }
+
+    function updateColumnSize(select) {
+        const column = select.closest('.col-1, .col-2, .col-3, .col-4, .col-6, .col-12');
+        const newSize = select.value;
+        column.className = column.className.replace(/col-\d+/, `col-${newSize}`);
+    }
+</script>
+</body>
+</html>
