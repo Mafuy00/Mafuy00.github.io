@@ -1,0 +1,53 @@
+<!--
+    DO NOT MODIFY THIS FILE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4 - Travel Booking</title>
+
+    <!-- DO NOT MODIFY THE BELOW CODE -->
+    <link rel="stylesheet" href="q4.css">
+    <script src="../Library/axios.min.js"></script>
+    <script src="../Library/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- Destination List -->
+        <destination-list 
+            :destinations="destinations"
+            :sdestination="selectedDestination"
+            @destination-selected="selectDestination">
+        </destination-list>
+
+        <!-- Package List -->
+        <package-list 
+            v-if="selectedDestination" 
+            :packages="packages" 
+            @package-booked="bookPackage">
+        </package-list>
+        
+        <!-- Bookings Section -->
+        <div id="bookings-section">
+            <h3>Your Bookings</h3>
+            <ul>
+                <li v-for="booking in bookings" :key="booking.package">
+                    {{ booking.package }} - {{ booking.price }}
+                    <button @click="cancelBooking(booking)">Cancel Booking</button>
+                </li>
+            </ul>
+            <h4>Total Cost: ${{ totalCost }}</h4>
+        </div>
+
+    </div>
+
+
+    <!-- DO NOT MODIFY THE BELOW CODE -->
+    <script src="q4.js"></script>
+
+</body>
+</html>

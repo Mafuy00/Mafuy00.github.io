@@ -1,0 +1,77 @@
+/* DO NOT MODIFY THIS FILE */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+button {
+    margin: 5px 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #106aca;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+button.selected {
+    background-color: green;
+    color: white;
+}
+
+#app {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#app > div {
+    flex: 1;
+    min-width: 300px;
+}
+
+#destination-section, #packages-section, #bookings-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    margin-left: 10px;
+}

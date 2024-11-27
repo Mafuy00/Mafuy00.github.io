@@ -1,0 +1,19 @@
+{
+    "destinations": {
+      "Seoul": [
+        { "package": "Palace Tour", "price": "$100" },
+        { "package": "Seoul Tower Visit", "price": "$80" },
+        { "package": "Han River Cruise", "price": "$120" }
+      ],
+      "London": [
+        { "package": "London Eye Experience", "price": "$150" },
+        { "package": "Tower of London Tour", "price": "$200" }
+      ],
+      "New York": [
+        { "package": "Empire State Building Entry", "price": "$130" },
+        { "package": "Central Park Guided Walk", "price": "$90" },
+        { "package": "Broadway Show Ticket", "price": "$250" }
+      ]
+    }
+  }
+  

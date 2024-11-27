@@ -1,0 +1,26 @@
+{
+    "Michael Jackson": {
+        "songs": [
+            {"title": "Thriller", "year": 1982},
+            {"title": "Billie Jean", "year": 1983},
+            {"title": "Beat It", "year": 1982},
+            {"title": "Man in the Mirror", "year": 1988}
+        ],
+        "awards": ["Grammy Legend Award", "Grammy Lifetime Achievement Award"]
+    },
+    "Elvis Presley": {
+        "songs": [
+            {"title": "Jailhouse Rock", "year": 1957},
+            {"title": "Can't Help Falling in Love", "year": 1961},
+            {"title": "Hound Dog", "year": 1956}
+        ],
+        "awards": ["Grammy Lifetime Achievement Award", "Rock and Roll Hall of Fame"]
+    },
+    "Diana Ross": {
+        "songs": [
+            {"title": "Ain't No Mountain High Enough", "year": 1970},
+            {"title": "Endless Love", "year": 1981}
+        ],
+        "awards": ["Grammy Lifetime Achievement Award", "Kennedy Center Honors"]
+    }
+}

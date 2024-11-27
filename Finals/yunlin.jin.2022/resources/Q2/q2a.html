@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q2a</title>
+
+    <script src="q2a.js"></script>
+</head>
+
+<body>
+    <p>Test Case 1: <span id="test1"></span></p>
+    <p>Test Case 2: <span id="test2"></span></p>
+    <p>Test Case 3: <span id="test3"></span></p>
+    <p>Test Case 4: <span id="test4"></span></p>
+    <p>Test Case 5: <span id="test5"></span></p>
+
+    <script>
+        testCase1()
+        testCase2()
+        testCase3()
+        testCase4()
+        testCase5()
+
+        function testCase1() {
+            let data = [true, 2, false]
+            let sum = sumOfNumbers(data)
+
+            if (sum == 3) {
+                document.getElementById("test1").innerText = "Pass"
+            } else {
+                document.getElementById("test1").innerText = "Fail"
+            }
+        }
+
+        function testCase2() {
+            let data = ['8', 2, 'a8']
+            let sum = sumOfNumbers(data)
+
+            if (sum == 10) {
+                document.getElementById("test2").innerText = "Pass"
+            } else {
+                document.getElementById("test2").innerText = "Fail"
+            }
+        }
+
+        function testCase3() {
+            let data = [[[1, 2], { 'a': 1 }]]
+            let sum = sumOfNumbers(data)
+
+            if (sum == 4) {
+                document.getElementById("test3").innerText = "Pass"
+            } else {
+                document.getElementById("test3").innerText = "Fail"
+            }
+        }
+
+        function testCase4() {
+            data = [{ 'a': [1, 2], 'b': { 'x': 3 } }]
+
+            let sum = sumOfNumbers(data)
+
+            if (sum == 6) {
+                document.getElementById("test4").innerText = "Pass"
+            } else {
+                document.getElementById("test4").innerText = "Fail"
+            }
+        }
+
+        function testCase5() {
+            let data = [null, "string", 9, [1, 2], { 'a': 0 }, false, true, { 'b': 'z' }, [3, { 'c': true }]]
+
+            let sum = sumOfNumbers(data)
+
+            if (sum == 17) {
+                document.getElementById("test5").innerText = "Pass"
+            } else {
+                document.getElementById("test5").innerText = "Fail"
+            }
+        }
+    </script>
+</body>
+</html>
