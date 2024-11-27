@@ -1,6 +1,6 @@
 /*
-    Name  : 
-    Email : 
+    Name  : Jin Yun Lin
+    Email : yunlin.jin.2022
 */
 
 const root = Vue.createApp({
@@ -36,7 +36,16 @@ const root = Vue.createApp({
         packages() {
             
             // YOUR CODE GOES HERE
-            
+            for (country in this.packagesData){
+                countryObj = this.packagesData[country];
+                console.log(countryObj);
+                for (package in countryObj){
+                    packageObj = countryObj[package];
+                    console.log(packageObj);
+                    return packageObj;
+                }
+            }
+            // console.log(this.packagesData);
         },
         
         // Part D (1 mark)
@@ -44,6 +53,19 @@ const root = Vue.createApp({
         totalCost() {
             
             // YOUR CODE GOES HERE
+            let total = 0;
+
+            for (country in this.packagesData){
+                countryObj = this.packagesData[country];
+                console.log(countryObj);
+                for (package in countryObj){
+                    packageObj = countryObj[package];
+                    console.log(packageObj);
+                    total += Number(packageObj.price);
+                }
+            }
+
+            return total;
 
         }
 
@@ -55,7 +77,9 @@ const root = Vue.createApp({
         selectDestination(destination) {
             
             // YOUR CODE GOES HERE
-
+            this.selectedDestination = destination;
+            
+            return destination;
         },
 
         
@@ -63,7 +87,7 @@ const root = Vue.createApp({
         bookPackage(selectedPackage) {
             
             // YOUR CODE GOES HERE
-
+            
         },
 
 

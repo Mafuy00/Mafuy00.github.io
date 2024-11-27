@@ -32,16 +32,17 @@ function getNumber(element) {
     
     } else if (typeof element === "number") {
 
-        return "number"
+        return Number(element);
 
     }  else if (typeof element === "boolean") {
-        console.log(element);
-        if (element == false){
-            return 0
+
+        if (element == true){
+            return 1;
+        } else if (element == false) {
+            return 0;
         } else {
-            return 1
+            return Number(element);
         }
-        // return 1
 
     } else if (Array.isArray(element)) {
 
@@ -49,7 +50,10 @@ function getNumber(element) {
 
     } else if (typeof element === "object") {   
 
-        return element
+        for (x in element){
+            return x;
+        }
+        // return element
 
     }
     return 0

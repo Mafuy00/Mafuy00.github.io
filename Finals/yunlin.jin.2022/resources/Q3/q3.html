@@ -1,6 +1,6 @@
 <!--
-    Name  : 
-    Email : 
+    Name  : Jin Yun Lin
+    Email : yunlin.jin.2022
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +27,9 @@
             <div class="singers-list">
 
                 <h2>Select a Singer</h2>
-                
-                <div>
-                    <input type="radio"> radio option ...
+
+                <div v-for="({others},key) in singers" :key="key">
+                    <input :id="key" type="radio" @click="listAwards"> {{key}}
                 </div>
             </div>
 
@@ -40,9 +40,9 @@
                 <h2>Awards</h2>
 
                 <!-- DO NOT CHANGE THE CLASS NAME -->
-                <ul class="awards-list">
-                    <li>Award 1 goes here</li>
-                    <li>and so on...</li>
+                <ul class="awards-list" v-model="listAwards">
+                    <!-- <li>Award 1 goes here</li> -->
+                    <li>{{listAwards}}</li>
                 </ul>
 
 

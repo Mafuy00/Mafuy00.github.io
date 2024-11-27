@@ -46,7 +46,9 @@
     /* display: flex;
     align-items: stretch; */
     /* padding: 10px; */
-    text-align: end;
+    /* text-align: end; */
+    position: relative;
+    left: 60%;
     
 }
 /* Part C */
