@@ -21,15 +21,14 @@
 
         <!-- DO NOT CHANGE THE CLASS NAME -->
         <div class="content">
-
-
             <!-- DO NOT CHANGE THE CLASS NAME -->
             <div class="singers-list">
 
                 <h2>Select a Singer</h2>
 
                 <div v-for="({others},key) in singers" :key="key">
-                    <input :id="key" type="radio" @click="listAwards"> {{key}}
+                    <input :id="key" type="radio" name="selectedSinger" :value="key" v-model="selectedSinger">
+                    <label :for ="key"> {{key}}</label>
                 </div>
             </div>
 
@@ -40,9 +39,9 @@
                 <h2>Awards</h2>
 
                 <!-- DO NOT CHANGE THE CLASS NAME -->
-                <ul class="awards-list" v-model="listAwards">
+                <ul class="awards-list">
                     <!-- <li>Award 1 goes here</li> -->
-                    <li>{{listAwards}}</li>
+                    <li v-for="awardName in singerDetails.awards">{{awardName}}</li>
                 </ul>
 
 
@@ -50,8 +49,10 @@
 
                 <!-- DO NOT CHANGE THE CLASS NAME -->
                 <ul class="songs-list">
-                    <li>Song goes here... button also</li>
-                    <li>Another song goes here... button also</li>
+
+                    <li v-for="songDetails in singerDetails.songs">{{songDetails.title}} - {{songDetails.year}} 
+                        <button @click="addSongToPlaylist(songDetails)">Add to playlist</button>
+                    </li>
                 </ul>
 
             </div>
@@ -63,8 +64,11 @@
         <div class="playlist">
             <h2>Your Playlist</h2>
             <ul>
-                <li>Song goes here... button also</li>
-                <li>Another song goes here... button also</li>
+
+                <li v-for="songDetails,idx in playlistSongs">{{songDetails.title}} - {{songDetails.year}} 
+
+                    <button @click="deletedSongWithIndex(idx)">Delete {{idx}}</button>
+                </li>
             </ul>
         </div>
 
