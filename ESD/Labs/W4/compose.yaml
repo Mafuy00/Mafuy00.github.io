@@ -1,0 +1,8 @@
+services:
+ book:
+   image: <dockerid>/book:1.0
+   container_name: book
+   ports:
+     - "5000:5000"
+   environment:
+     - dbURL=mysql+mysqlconnector://is213@host.docker.internal:3306/book

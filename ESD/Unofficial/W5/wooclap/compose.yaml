@@ -1,0 +1,17 @@
+services:
+  tea:
+    image: esd/tea:recap
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: tea
+    ports:
+      - "25000:15000"
+    environment:
+      - dbURL=mysql+mysqlconnector://is213@host.docker.internal:3306/tea
+
+  milk:
+    image: esd/milk:recap
+    container_name: milk
+    ports:
+      - "26000:15000"
