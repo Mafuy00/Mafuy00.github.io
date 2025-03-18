@@ -1,6 +1,6 @@
 services:
  book:
-   image: <dockerid>/book:1.0
+   image: yunlin0217/book:1.0
    container_name: book
    ports:
      - "5000:5000"
